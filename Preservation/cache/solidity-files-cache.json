@@ -1,0 +1,146 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/acer/Desktop/new-contract/Ethernaut2/Preservation/contracts/Preservation.sol": {
+      "lastModificationDate": 1652633106964,
+      "contentHash": "56434f4924a35abaea097b21b71b80aa",
+      "sourceName": "contracts/Preservation.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LibraryContract",
+        "Preservation"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Preservation/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1652434651939,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Preservation/contracts/FixedTimeLibrary.sol": {
+      "lastModificationDate": 1652440340503,
+      "contentHash": "9421850c2395d790fd082b95e8b1ec79",
+      "sourceName": "contracts/FixedTimeLibrary.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "FixedTimeLibrary"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Preservation/contracts/ImpostorLibrary.sol": {
+      "lastModificationDate": 1652440547271,
+      "contentHash": "75523f07dc8d7f638f6c22717d9585ef",
+      "sourceName": "contracts/ImpostorLibrary.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ImpostorLibrary"
+      ]
+    }
+  }
+}
