@@ -19,7 +19,10 @@ What is Ethernaut trying to teach here? My takeaway is that you should be very w
 
 I would also like to add: suppose your contract calls to a _specific_ smart contract address, and is limited to calling only that address? Then you can be freer with your assumption, but you should still check: 
 - is that contract fully upgradeable? If so, then any assumptions are moot, as that contract can change overnight to be essentially a different contract. 
-- how would your call behave in the case that that contract were to self-destruct? 
+- how would your call behave in the case that that contract were self-destructed? 
+- how would your call behave if the external call reverted? 
+- how would your call behave if the external call used up all available gas? 
+- how would your call behave if the external call called back into the caller (reentrant call)? 
 
 Again, you must limit your assumptions to the bare minimum. 
 
