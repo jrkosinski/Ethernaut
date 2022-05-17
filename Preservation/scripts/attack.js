@@ -2,10 +2,10 @@ const { ethers } = require("hardhat");
 const Runner = require('./lib/runner');
 const Deployer = require('./deployer');
 
-Runner.run(async () => { 
+Runner.run(async (owner) => { 
     
     //PLACE Preservation CONTRACT ADDRESS HERE (Ethernaut: contract.address)
-    const contractAddr = "0x12D961E749a60BB6bb1b3F0ca1Ed590A2F11562c"; 
+    const contractAddr = "0xDC0C662aD9Ad7B1d8a536417A6E42D6D91E89848"; 
     
     //get the Ethernaut Preservation contract 
     const contract = await ethers.getContractAt("Preservation", contractAddr);
@@ -13,6 +13,7 @@ Runner.run(async () => {
     //deploy impostor contract
     const impostor = await Deployer.deploy();
     
+    console.log();
     console.log("* * * ");
     console.log(`original owner is: ${await contract.owner()}`);
     

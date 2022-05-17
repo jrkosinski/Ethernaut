@@ -6,9 +6,9 @@ pragma solidity ^0.8.0;
  * of the contract that calls it. 
  */
 contract ImpostorLibrary {
-    address private a;
-    address private b;
-    uint private owner; 
+    address public timeZone1Library;
+    address public timeZone2Library;
+    uint public owner; 
     
     function setTime(uint _time) public {
         owner = _time;
