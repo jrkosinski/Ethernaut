@@ -4,7 +4,11 @@ const Deployer = require("./deployer");
 
 
 Runner.run(async () => {
-    const contract = await ethers.getContractAt("Denial", "0x26D9a4cF4674401EEa234Aae06b6261678D2c56D");    
+    
+    //PLACE Denial CONTRACT ADDRESS HERE (Ethernaut: contract.address)
+    const contractAddr = "0x26D9a4cF4674401EEa234Aae06b6261678D2c56D";
+    
+    const contract = await ethers.getContractAt("Denial", contractAddr);    
     const attacker = await Deployer.deploy();
     
     console.log();
