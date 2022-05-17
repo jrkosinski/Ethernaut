@@ -1,0 +1,258 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Address.sol": {
+      "lastModificationDate": 1652599369410,
+      "contentHash": "aad09b8eed32894987ba3497b65d246a",
+      "sourceName": "contracts/Address.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "<0.7.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Motorbike.sol": {
+      "lastModificationDate": 1652784288419,
+      "contentHash": "317a815d49aed0fc5a9ee7661cd67416",
+      "sourceName": "contracts/Motorbike.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Address.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "<0.7.0"
+      ],
+      "artifacts": [
+        "Motorbike"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1652598831181,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Initializable.sol": {
+      "lastModificationDate": 1652599340022,
+      "contentHash": "7584ea318dfbdb350d5dec1354ac4b7a",
+      "sourceName": "contracts/Initializable.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "<0.7.0"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/AttackEngine.sol": {
+      "lastModificationDate": 1652599893111,
+      "contentHash": "8e697db3d390c321bc7755be844ea761",
+      "sourceName": "contracts/AttackEngine.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Initializable.sol"
+      ],
+      "versionPragmas": [
+        "<0.7.0"
+      ],
+      "artifacts": [
+        "AttackEngine"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/NonInitializable.sol": {
+      "lastModificationDate": 1652602515751,
+      "contentHash": "670359ed86f1745e51731c9fb022230f",
+      "sourceName": "contracts/NonInitializable.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "<0.7.0"
+      ],
+      "artifacts": [
+        "NonInitializable"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Engine.sol": {
+      "lastModificationDate": 1652788149437,
+      "contentHash": "1884e67c5bec0a79dca3faa2732b9738",
+      "sourceName": "contracts/Engine.sol",
+      "solcConfig": {
+        "version": "0.6.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Initializable.sol",
+        "./Address.sol"
+      ],
+      "versionPragmas": [
+        "<0.7.0"
+      ],
+      "artifacts": [
+        "Engine"
+      ]
+    }
+  }
+}
