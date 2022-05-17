@@ -1,0 +1,148 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/acer/Desktop/new-contract/Ethernaut2/Shop/contracts/Attacker.sol": {
+      "lastModificationDate": 1652420378959,
+      "contentHash": "11641db61832f319ba549494d7659510",
+      "sourceName": "contracts/Attacker.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Attacker",
+        "IShop"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Shop/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1652375761830,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Shop/contracts/TestBuyer.sol": {
+      "lastModificationDate": 1652808077401,
+      "contentHash": "145a1ae57100c45f029e9f3c463c7893",
+      "sourceName": "contracts/TestBuyer.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IShop",
+        "TestBuyer"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Shop/contracts/Shop.sol": {
+      "lastModificationDate": 1652808029668,
+      "contentHash": "57891efb40585564af49ad7073c6be22",
+      "sourceName": "contracts/Shop.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Buyer",
+        "Shop"
+      ]
+    }
+  }
+}
