@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity <0.7.0;
+pragma solidity ^0.8.0;
 
-//import "@openzeppelin/contracts/utils/Address.sol";
 import "./Address.sol";
-import "hardhat/console.sol";
 
 /**
  * OBJECTIVES: 
@@ -16,11 +14,10 @@ contract Motorbike {
         address value;
     }
     
-    constructor(address _logicAddr) public {
+    constructor(address _logicAddr) {
         require(Address.isContract(_logicAddr), "ERC1967: new implementation is not a contract");
         AddressSlot storage slot = _getAddressSlot(_IMPLEMENTATION_SLOT);
         slot.value = _logicAddr;
-        console.log("calling engine upgrade initialize with %s", msg.sender);
         (bool success,) = _logicAddr.delegatecall(abi.encodeWithSignature("initialize()")); 
         require(success, "Call failed");
     }
@@ -44,7 +41,7 @@ contract Motorbike {
     
     function _getAddressSlot(bytes32 slot) internal pure returns (AddressSlot storage r) {
         assembly {
-            r_slot := slot  
+            r.slot := slot  
         }
     } 
 }

@@ -3,7 +3,7 @@ const provider = waffle.provider;
 const Runner = require("./lib/runner");
 
 Runner.run(async () => {
-    const contractAddr = "0x3356FE5E1b76aB8b7D9Cf61079463C13496130E9";     
+    const contractAddr = "0x0F0962b59d11F1047caCADffa2FFC014a62ED93B";     
     
     //get engine address from storage slot 
     let engineAddr = await provider.getStorageAt(contractAddr, "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"); 

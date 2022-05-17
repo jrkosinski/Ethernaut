@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Address.sol": {
-      "lastModificationDate": 1652599369410,
-      "contentHash": "aad09b8eed32894987ba3497b65d246a",
+      "lastModificationDate": 1652800401395,
+      "contentHash": "6ab2bdd9ad0658269bd600432ceb4ab7",
       "sourceName": "contracts/Address.sol",
       "solcConfig": {
-        "version": "0.6.4",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -30,18 +30,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        "<0.7.0"
+        "^0.8.0"
       ],
       "artifacts": [
         "Address"
       ]
     },
     "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Motorbike.sol": {
-      "lastModificationDate": 1652784288419,
-      "contentHash": "317a815d49aed0fc5a9ee7661cd67416",
+      "lastModificationDate": 1652800484048,
+      "contentHash": "4958f4d5b50ca306a0fbdc57f19a4699",
       "sourceName": "contracts/Motorbike.sol",
       "solcConfig": {
-        "version": "0.6.4",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -64,11 +64,10 @@
         }
       },
       "imports": [
-        "./Address.sol",
-        "hardhat/console.sol"
+        "./Address.sol"
       ],
       "versionPragmas": [
-        "<0.7.0"
+        "^0.8.0"
       ],
       "artifacts": [
         "Motorbike"
@@ -110,11 +109,11 @@
       ]
     },
     "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Initializable.sol": {
-      "lastModificationDate": 1652599340022,
-      "contentHash": "7584ea318dfbdb350d5dec1354ac4b7a",
+      "lastModificationDate": 1652800423951,
+      "contentHash": "42070d5df05410f41c32572e58004b18",
       "sourceName": "contracts/Initializable.sol",
       "solcConfig": {
-        "version": "0.6.4",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -138,18 +137,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        "<0.7.0"
+        "^0.8.0"
       ],
       "artifacts": [
         "Initializable"
       ]
     },
     "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/AttackEngine.sol": {
-      "lastModificationDate": 1652599893111,
-      "contentHash": "8e697db3d390c321bc7755be844ea761",
+      "lastModificationDate": 1652800503821,
+      "contentHash": "3d64e7709fdaa0bc24441918e00e6529",
       "sourceName": "contracts/AttackEngine.sol",
       "solcConfig": {
-        "version": "0.6.4",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -175,18 +174,18 @@
         "./Initializable.sol"
       ],
       "versionPragmas": [
-        "<0.7.0"
+        "^0.8.0"
       ],
       "artifacts": [
         "AttackEngine"
       ]
     },
     "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/NonInitializable.sol": {
-      "lastModificationDate": 1652602515751,
-      "contentHash": "670359ed86f1745e51731c9fb022230f",
+      "lastModificationDate": 1652800477624,
+      "contentHash": "a927b23e827353bce4f3b8e1bb133f9f",
       "sourceName": "contracts/NonInitializable.sol",
       "solcConfig": {
-        "version": "0.6.4",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -210,18 +209,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        "<0.7.0"
+        "^0.8.0"
       ],
       "artifacts": [
         "NonInitializable"
       ]
     },
     "/home/acer/Desktop/new-contract/Ethernaut2/Motorbike/contracts/Engine.sol": {
-      "lastModificationDate": 1652788149437,
-      "contentHash": "1884e67c5bec0a79dca3faa2732b9738",
+      "lastModificationDate": 1652800573810,
+      "contentHash": "bfb19dec4ae68de3e252623f56840026",
       "sourceName": "contracts/Engine.sol",
       "solcConfig": {
-        "version": "0.6.4",
+        "version": "0.8.4",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -248,7 +247,7 @@
         "./Address.sol"
       ],
       "versionPragmas": [
-        "<0.7.0"
+        "^0.8.0"
       ],
       "artifacts": [
         "Engine"

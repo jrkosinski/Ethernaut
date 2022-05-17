@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity <0.7.0;
+pragma solidity ^0.8.0;
 
 import "./Initializable.sol";
 import "./Address.sol";
@@ -55,7 +55,7 @@ contract Engine is Initializable {
     
     function _getAddressSlot(bytes32 slot) internal pure returns (AddressSlot storage r) {
         assembly {
-            r_slot := slot  //TODO: how is this naming of r_slot working?
+            r.slot := slot  //TODO: how is this naming of r_slot working?
         }
     } 
 }

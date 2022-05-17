@@ -7,7 +7,7 @@ const provider = waffle.provider;
 Runner.run(async () => {
     
     //PLACE MOTORBIKE CONTRACT ADDRESS HERE (Ethernaut: contract.address)
-    const contractAddr = "0x3356FE5E1b76aB8b7D9Cf61079463C13496130E9";     
+    const contractAddr = "0x0F0962b59d11F1047caCADffa2FFC014a62ED93B";     
     
     //deploy attack contract 
     const attacker = await Deployer.deploy();
