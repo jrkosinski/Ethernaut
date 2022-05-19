@@ -1,0 +1,112 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/acer/Desktop/new-contract/Ethernaut2/Force/contracts/Destructible.sol": {
+      "lastModificationDate": 1652973696216,
+      "contentHash": "af440e88777e66b1f799b7a16ef9b8a7",
+      "sourceName": "contracts/Destructible.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Destructible"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Force/contracts/Force.sol": {
+      "lastModificationDate": 1652960275149,
+      "contentHash": "240c9f670a50095de8f59d9aa30eb743",
+      "sourceName": "contracts/Force.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Force"
+      ]
+    },
+    "/home/acer/Desktop/new-contract/Ethernaut2/Force/contracts/ForceFactory.sol": {
+      "lastModificationDate": 1652971517622,
+      "contentHash": "ff0f4fae158da6e55b6dd4dff9186ef2",
+      "sourceName": "contracts/ForceFactory.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Force.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ForceFactory"
+      ]
+    }
+  }
+}
