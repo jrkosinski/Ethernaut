@@ -13,6 +13,7 @@ contract Building {
     /**
      * The first time this is called, it will return false. Afterwards, it will return true
      * every time. 
+     * @return (bool) false, then true 
      */
     function isLastFloor(uint) external returns (bool) {
         bool output = lastFloor;
@@ -22,6 +23,7 @@ contract Building {
     
     /**
      * Invokes the elevator and sends it to the top. 
+     * @param _elevator address of Elevator contract
      */
     function goToTop(address _elevator) public {
         Elevator elevator = Elevator(_elevator);

@@ -1,14 +1,14 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut Elevator", function () {
 	let elevator, building;				//contracts
 	
 	beforeEach(async function () {
         //contracts
-		elevator = await testUtils.deployContract("Elevator");
-		building = await testUtils.deployContract("Building");
+		elevator = await utils.deployContractSilent("Elevator");
+		building = await utils.deployContractSilent("Building");
 	});   
 
 	//TODO: make this pass? 

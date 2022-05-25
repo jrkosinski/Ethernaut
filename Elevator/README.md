@@ -28,6 +28,13 @@ Again, you must limit your assumptions to the bare minimum.
 
 
 ### Instructions
-- compile 
-- enter the Elevator contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Elevator.sol](contracts/Elevator.sol) - Ethernaut contract
+- [contracts/Building.sol](contracts/Building.sol) - Contract that executes the 'attack'. 
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/ElevatorTest.js](test/ElevatorTest.js) - Unit tests 

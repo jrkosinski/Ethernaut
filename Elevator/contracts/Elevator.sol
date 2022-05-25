@@ -14,6 +14,7 @@ contract Elevator {
     /**
      * 'Moves' to a floor. Note that the elevator seems to refuse to go to the top floor. 
      * But will set 'top' equal to true if it ever does. 
+     * @param _floor the floor we want to go to 
      */
     function goTo(uint _floor) public { 
         Building building = Building(msg.sender);

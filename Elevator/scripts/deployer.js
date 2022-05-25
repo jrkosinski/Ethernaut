@@ -1,7 +1,7 @@
-const Runner = require('./lib/runner');
+const utils = require("./lib/utils");
 
 module.exports = {
     deploy: async() => {
-        return await Runner.deployContract("Building");
+        return await utils.deployContract("Building");
     }
 };

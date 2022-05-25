@@ -2,7 +2,6 @@ const { ethers } = require("hardhat");
 const Runner = require('./lib/runner');
 const Deployer = require('./deployer');
 
-
 Runner.run(async () => { 
     
     //PLACE FALLBACK CONTRACT ADDRESS HERE (Ethernaut: contract.address)
@@ -13,7 +12,6 @@ Runner.run(async () => {
     //if building is already pre-deployed, comment out this line and uncomment the subsequent line, 
     //  plugging in the correct address 
     const building = await Deployer.deploy();
-    //const building = await ethers.getContractAt("Building", buildingAddr);
     
     console.log();
     console.log("* * * ");
