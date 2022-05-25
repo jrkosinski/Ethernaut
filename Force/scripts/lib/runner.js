@@ -1,8 +1,17 @@
-const { ethers } = require("hardhat");
+const { ethers, waffle } = require("hardhat");
 
+/**
+ * Passes in to main the following parameters: 
+ * provider
+ * owner 
+ * addr1
+ * addr2
+ * If more addresses are needed, they can be gotten manually from ethers.getSigners() in the 
+ * main function itself.  
+ */
 doRun = async (main) => {
     const [owner, addr1, addr2] = await ethers.getSigners();
-    await main(owner, addr1, addr2);
+    await main(waffle.provider, owner, addr1, addr2);
 }
 
 module.exports = {
@@ -13,17 +22,5 @@ module.exports = {
             console.error(error);
             process.exit(1);
         });
-    }, 
-    
-    deployContract: async(artifactId) => {
-        const [deployer] = await ethers.getSigners();
-        console.log("Deploying contracts with the account:", deployer.address);  
-        console.log("Account balance:", (await deployer.getBalance()).toString());
-        
-        const Contract = await ethers.getContractFactory(artifactId);
-        const contract = await Contract.deploy();
-      
-        console.log("Contract address:", contract.address);
-        return contract;
     }
 }

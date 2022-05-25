@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers, waffle } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 const provider = waffle.provider;
 
@@ -12,8 +12,8 @@ describe("Ethernaut Force", function () {
 		[owner, ...addrs] = await ethers.getSigners();
         
         //contract
-		contract = await testUtils.deployContract("Force");
-		destructible = await testUtils.deployContract("Destructible");
+		contract = await utils.deployContractSilent("Force");
+		destructible = await utils.deployContractSilent("Destructible");
 	});
 	      
 	describe("Initial State", function () {
@@ -50,7 +50,7 @@ describe("Ethernaut Force", function () {
 		it("using address prediction", async function () {
 			
 			//create the factory 
-			const factory = await testUtils.deployContract("ForceFactory"); 
+			const factory = await utils.deployContractSilent("ForceFactory"); 
 			
 			//predict the address of the next created contract  
 			const predictedAddr = "0x" + (ethers.utils.solidityKeccak256(

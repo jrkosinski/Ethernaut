@@ -1,10 +1,10 @@
-const { ethers, waffle } = require("hardhat");
+const { ethers } = require("hardhat");
 const Runner = require("./lib/runner");
 const Deployer = require("./deployer"); 
 
-const provider = waffle.provider;
-
-Runner.run(async (owner) => {
+Runner.run(async (provider, owner) => {
+    
+    //PLACE ETHERNAUT FORCE CONTRACT ADDRESS HERE (Ethernaut: contract.address)
     const contractAddr = "0x3e4211498d070a5ea9A7aF0608Aca193328Ee2C5";
     
     //deploy destructible contract 

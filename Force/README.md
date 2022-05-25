@@ -16,12 +16,19 @@ One is to predict the address of the contract before it's created, then send eth
 
 The other way is to self-destruct a contract that has ether, and pass the address of the target contract. 
 
-The first way is used to complete this level. The second can be seen in the unit tests. 
+The first way is used to complete this level. The second (address prediction) can be seen in the unit tests. 
 
 ### Takeaways
-There are several ways of paying ether into a contract. 
+There is more than one way to send ether into a contract. 
 
 ### Instructions
-- compile
-- enter the Force contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Force.sol](contracts/Force.sol) - Ethernaut contract
+- [contracts/Destructible.sol](contracts/Destructible.sol) - Contract that executes the 'attack'. 
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/ForceTest.js](test/ForceTest.js) - Unit tests 
