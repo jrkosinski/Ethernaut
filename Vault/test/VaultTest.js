@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers, waffle } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 const provider = waffle.provider;
 
@@ -12,22 +12,28 @@ describe("Ethernaut Vault", function () {
 	beforeEach(async function () {
 		[owner, ...addrs] = await ethers.getSigners();
         
-        //contract
-		contract = await testUtils.deployContract("Vault", ethers.utils.formatBytes32String(password));
+        //deploy contract
+		contract = await utils.deployContractSilent(
+			"Vault", 
+			ethers.utils.formatBytes32String(password)
+		);
 	});
 	      
 	describe("Initial State", function () {
 		it("slot 0", async function () {
+			//should be locked initially
 			expect(await contract.locked()).to.equal(true);
 		});
     });   
 	      
 	describe("Values in Storage Slots", function () {
 		it("slot 0", async function () {
+			//slot 0 contains boolean 
 			expect(parseInt(await provider.getStorageAt(contract.address, 0))).to.equal(1);
 		});
 		
 		it("slot 1", async function () {
+			//slot 1 contains the password 
 			expect(ethers.utils.parseBytes32String(await provider.getStorageAt(contract.address, 1))).to.equal(password);
 		});
     });    
@@ -40,6 +46,7 @@ describe("Ethernaut Vault", function () {
 			//unlock
 			await contract.unlock(passwd);
 			
+			//should be unlocked 
 			expect(await contract.locked()).to.equal(false);
 		});
     });   

@@ -1,12 +1,10 @@
-const { ethers, waffle } = require("hardhat");
+const { ethers } = require("hardhat");
 const Runner = require("./lib/runner");
 
-const provider = waffle.provider; 
-
-Runner.run(async () => {
+Runner.run(async (provider) => {
     
     //PLACE ADDRESS OF VAULT CONTRACT HERE (Ethernaut: contract.address)
-    const contractAddr = "0x72894335b65D4c29f3ec1f462C47A58E83E06d83";     
+    const contractAddr = "0x00B1b7E8E19f739EDA1081250a834F8E60E8687b";     
     
     //get contract 
     const contract = await ethers.getContractAt("Vault", contractAddr);
