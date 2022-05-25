@@ -13,6 +13,7 @@ contract Reentrancy {
 
     /**
      * Pays into the contract, and records the payment amount.
+     * @param _to address of the donator. 
      */
     function donate(address _to) public payable {
         balances[_to] = balances[_to].add(msg.value);
@@ -20,6 +21,8 @@ contract Reentrancy {
 
     /**
      * Returns the amount donated by the given address. 
+     * @param _who address in question 
+     * @return balance (uint) 
      */
     function balanceOf(address _who) public view returns (uint balance) {
         return balances[_who];
@@ -27,6 +30,7 @@ contract Reentrancy {
 
     /**
      * Allows a caller to withdraw up to and including the cumulative amount that they've donated. 
+     * @param _amount the amount to withdraw (must not exceed caller's balance)
      */
     function withdraw(uint _amount) public {
         if(balances[msg.sender] >= _amount) {

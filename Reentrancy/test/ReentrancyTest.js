@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut Reentrancy", function () {		  
 	let contract;				//contracts
@@ -10,7 +10,7 @@ describe("Ethernaut Reentrancy", function () {
 		[owner, addr1, addr2, ...addrs] = await ethers.getSigners();
         
         //contract
-		contract = await testUtils.deployContract("Reentrancy");
+		contract = await utils.deployContractSilent("Reentrancy");
 	});
 	      
 	describe("Initial state", function () {

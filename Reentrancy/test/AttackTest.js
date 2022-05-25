@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers, waffle} = require("hardhat");
 const provider = waffle.provider;
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Reentrancy Attack", function () {		  
 	let victim, attacker;		//contracts
@@ -13,8 +13,8 @@ describe("Reentrancy Attack", function () {
 		[owner, addr1, addr2, ...addrs] = await ethers.getSigners();
         
         //contracts
-		victim = await testUtils.deployContract("Reentrancy");
-		attacker = await testUtils.deployContract("Attacker");
+		victim = await utils.deployContractSilent("Reentrancy");
+		attacker = await utils.deployContractSilent("Attacker");
 			
 		//donate an amount from any other address
 		await victim.donate(addr1.address, {value:donationAmt});
@@ -34,7 +34,7 @@ describe("Reentrancy Attack", function () {
 			await attacker.startDrain(victim.address, attackerAmt); 
 			
 			//balance in contract should be zero
-			expect(parseInt(await attacker.getVictimBalance())).to.be.equal(0);
+			expect(parseInt(await attacker.victimBalance())).to.be.equal(0);
 		});
 	});
 });
