@@ -14,7 +14,7 @@ contract Fallout {
     address payable public owner;
 
 
-    /* constructor */
+    /* constructor? */
     function Fal1out() public payable {
         owner = payable(msg.sender);
         allocations[owner] = msg.value;
@@ -29,7 +29,7 @@ contract Fallout {
             }
 
     /**
-     * Pay into the contract, and records the cumulative payment for the sender.
+     * Pays into the contract, and records the cumulative payment for the sender.
      */
     function allocate() public payable {
         allocations[msg.sender] = allocations[msg.sender].add(msg.value);
@@ -37,11 +37,11 @@ contract Fallout {
 
     /**
      * Sends the given allocator's allocations back to the original address.
-     * @param allocator address of the allocator
+     * @param _allocator address of the allocator
      */
-    function sendAllocation(address payable allocator) public {
-        require(allocations[allocator] > 0);
-        allocator.transfer(allocations[allocator]);
+    function sendAllocation(address payable _allocator) public {
+        require(allocations[_allocator] > 0);
+        _allocator.transfer(allocations[_allocator]);
     }
 
     /**
@@ -53,9 +53,9 @@ contract Fallout {
 
     /**
      * Gets the total cumulative amount of the given allocator's allocations. 
-     * @param allocator address of the allocator
+     * @param _allocator address of the allocator
      */
-    function allocatorBalance(address allocator) public view returns (uint) {
-        return allocations[allocator];
+    function allocatorBalance(address _allocator) public view returns (uint) {
+        return allocations[_allocator];
     }
 }

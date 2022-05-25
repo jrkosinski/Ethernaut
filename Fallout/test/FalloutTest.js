@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers, waffle } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 const provider = waffle.provider;
 
@@ -12,7 +12,7 @@ describe("Ethernaut Fallout", function () {
 		[owner, addr1,...addrs] = await ethers.getSigners();
         
         //contract
-		contract = await testUtils.deployContract("Fallout");
+		contract = await utils.deployContractSilent("Fallout");
 	});
 	      
 	describe("Initial State", function () {
@@ -63,6 +63,7 @@ describe("Ethernaut Fallout", function () {
 	
 	describe("Ownership Restrictions", function(){
 		it("can't collection allocations", async function () {
+			//caller of collectAllocations must be owner 
 			await contract.connect(owner).allocate({value:100});
 			await expect(contract.collectAllocations()).to.be.revertedWith("caller is not the owner");
 		});
