@@ -1,20 +1,35 @@
-## Delegation
+## Fallback
 
 ### Ethernaut Description
-The goal of this level is for you to claim ownership of the instance you are given.
+Look carefully at the contract's code below.
 
-**Things that might help**
-- Look into Solidity's documentation on the delegatecall low level function, how it works, how it can be used to delegate operations to on-chain libraries, and what implications it has on execution scope.
-- Fallback methods
-- Method ids
+You will beat this level if
+
+1. you claim ownership of the contract
+2. you reduce its balance to 0
   
-### Solution
-The _Delegation_ contract calls to the _Delegate_ contract via _delegatecall_, in the _fallback_ method. Therefore, if we call _Delegation_ with the method signature of the pwn() method, and _Delegation_ does not have such a method, execution will go to the _fallback_. There, it will call to _Delegate_'s pwn() method. 
+**Things that might help**
 
-Now, in the pwn() method, the owner will be set with msg.sender. But since it's _delegatecall_, it won't set _Delegate_'s owner, but _Delegation_'s. Because _delegatecall_ preserves the context of the caller, not the callee. So we will then be setting _Delegation_'s owner to whatever address called the method. And we become the owner of the contract. 
+- How to send ether when interacting with an ABI
+- How to send ether outside of the ABI
+- Converting to and from wei/ether units (see help() command)
+- Fallback methods
+
+### Solution 
+There are two ways to become the owner (outside of the constructor). One is the hard way, by being the highest contributor. The other is much easier, via the receive() method. To take advantage of this we need only to first contribute 1 wei via the contribute() method, then send 1 wei to the receive() method. This will satisfy the requirements to allow the caller to become the owner. No new contract code is necessary to accomplish this.  
 
 ### Takeaways
-_delegatecall_ is a common attack point, and has been a known common attack point in the past. It's context-preserving nature has confused developers at times, and in more complex examples it can have some pretty difficult to foresee effects. 
+This exercise just aims to have the user be familiar with what a fallback is, how it's defined, and how it's invoked. And of course, how fallbacks may, if unheeded, conceivably have unexpected security consequences. 
+
+Fallback functions are executed if a call to a contract is made with either no method signature specified, or no method in the contract matches the specified signature. In other words, the contract can't match the signature that you requested to anything in the contract's ABI. Fallbacks have the following properties: 
+
+- are optional 
+- cannot take any arguments 
+- cannot return anything 
+- must be marked external (therefore cannot be invoked directly from within the contract itself) 
+- in recent Solidity versions, must be marked with the keyword "fallback" (in early versions, they were just unnamed functions) 
+
+Fallbacks are an essential component of some contract upgrade patterns. 
 
 ### Instructions
 - In **/scripts/execute.js**, set the contractAddr variable's value with Ethernaut's contract.address. 
@@ -23,6 +38,6 @@ _delegatecall_ is a common attack point, and has been a known common attack poin
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- **/contracts/Delegation.sol** - Ethernaut contracts 
+- **/contracts/Fallback.sol** - Ethernaut contract
 - **/scripts/execute.js** - Executes the solution 
-- **/test/DelegationTest.js** - Unit tests 
+- **/test/FallbackTest.js** - Unit tests 

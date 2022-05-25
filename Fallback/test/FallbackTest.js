@@ -1,17 +1,18 @@
 const { expect } = require("chai");
-const { providers } = require("ethers");
-const { ethers } = require("hardhat");
-const testUtils = require("./utils.js");
+const { ethers, waffle } = require("hardhat");
+const utils = require("../scripts/lib/utils.js");
+
+const provider = waffle.provider;
 
 describe("Ethernaut Fallback", function () {		  
 	let fallback;				//contracts 
-	let owner;					//accounts 
+	let owner, addr1, addr2;	//accounts 
 	
 	beforeEach(async function () {
-		[owner, ...addrs] = await ethers.getSigners();
+		[owner, addr1, addr2,...addrs] = await ethers.getSigners();
         
-        //contract
-		fallback = await testUtils.deployContract("Fallback");
+        //deploy contract
+		fallback = await utils.deployContractSilent("Fallback");
 	});
 	      
 	describe("Initial state", function () {
@@ -89,11 +90,11 @@ describe("Ethernaut Fallback", function () {
 			}); 
 			
 			//verify balance 
-			expect(await providers.getBalance(fallback.address)).to.be.equal(101);
+			expect(await provider.getBalance(fallback.address)).to.be.equal(101);
 			
 			//drain balance and verify 
 			await fallback.connect(addr1).withdraw();
-			expect(await providers.getBalance(fallback.address)).to.be.equal(0);
+			expect(await provider.getBalance(fallback.address)).to.be.equal(0);
 		});
 	});
 });
