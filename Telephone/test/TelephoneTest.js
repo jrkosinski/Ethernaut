@@ -1,8 +1,8 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
-describe("Telephone contract", function () {		  
+describe("Ethernaut Telephone", function () {		  
 	let telephone, attacker;	//contracts
 	let owner, addr1;			//accounts
 	
@@ -10,8 +10,8 @@ describe("Telephone contract", function () {
 		[owner, addr1, ...addrs] = await ethers.getSigners();
         
         //contract
-		telephone = await testUtils.deployContract("Telephone");
-		attacker = await testUtils.deployContract("Attacker");
+		telephone = await utils.deployContractSilent("Telephone");
+		attacker = await utils.deployContractSilent("Attacker");
 	});
 	
 	describe("Initial State", function () {
