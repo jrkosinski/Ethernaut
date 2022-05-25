@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut Token", function () {		  
 	let token;					//contracts
@@ -11,7 +11,7 @@ describe("Ethernaut Token", function () {
 		[owner, addr1, addr2, ...addrs] = await ethers.getSigners();
         
         //contract
-		token = await testUtils.deployContract("Token", initialSupply);
+		token = await utils.deployContractSilent("Token", initialSupply);
 		
 		//transfer 20 tokens to addr1
 		await token.transfer(addr1.address, 20); 

@@ -19,6 +19,12 @@ Be wary of arithmetic overflows and underflows, which can cause an unanticipated
 The normal guard against this prior to Solidity 0.8 was to check your arithmetic for overflow/underflow, or (more commonly) to use OpenZeppelin's SafeMath library. With 0.8 and later, this is no longer needed, as the arithmetic is checked by default. Perhaps OpenZeppelin will deprecate their SafeMath library in the future, though it's my understanding that for now it will still be included. 
 
 ### Instructions
-- compile 
-- enter the Token contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Token.sol](contracts/Token.sol) - Ethernaut contract
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/TokenTest.js](test/TokenTest.js) - Unit tests 

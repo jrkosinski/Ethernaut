@@ -1,8 +1,7 @@
 const { ethers } = require("hardhat");
 const Runner = require("./lib/runner");
 
-
-Runner.run(async (owner) => {
+Runner.run(async (provider, owner) => {
     
     //PLACE TOKEN CONTRACT ADDRESS HERE (Ethernaut: contract.address)
     const tokenAddr = "0xAC66DFa46Cf547a488AB5F0c4E404876537edf65";     
