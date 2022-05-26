@@ -23,7 +23,13 @@ I believe that CREATE2 uses a different formula to determine new addresses (whic
 My takeaway from this is that (a) contract creations leave a trail on the blockchain, so the contracts are never 'lost' if you know where to look, and (b) more importantly, how to calculate the future address of a contract that hasn't yet been created. 
 
 ### Instructions
-- compile 
-- enter the Recovery contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Recovery.sol](contracts/Recovery.sol) - Ethernaut contract
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/RecoveryTest.js](test/RecoveryTest.js) - Unit tests 
 

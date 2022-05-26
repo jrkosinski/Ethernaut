@@ -1,16 +1,14 @@
-const { ethers, waffle } = require("hardhat");
+const { ethers } = require("hardhat");
 const Runner = require("./lib/runner");
-const generateAddress = require("./generateAddress");
+const utils = require("./lib/utils");
 
-const provider = waffle.provider;
-
-Runner.run(async (owner) => {
+Runner.run(async (provider, owner) => {
     
     //PLACE THE Recovery CONTRACT ADDRESS HERE (Ethernaut: contract.address)    
     const recoveryAddr = "0x9281D32c3Da999D1c7d7AAcD4fE52611c4bd097F";     
     
     //calculate the token contract adddress 
-	const tokenAddr = generateAddress(recoveryAddr, 1);
+	const tokenAddr = utils.predictContractAddress(recoveryAddr, 0);
 			
     console.log("* * * ");
     console.log(`Recovered token address is ${tokenAddr}`); 
