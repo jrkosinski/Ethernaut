@@ -1,0 +1,227 @@
+{
+  "id": "7d870cf6cecbe4d7874d9df7412b9140",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.8.4",
+  "solcLongVersion": "0.8.4+commit.c7e474f2",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/MagicNumberSolver.sol": {
+        "content": "//SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0; \n\n/**\n * OBJECTIVES: \n * create a contract to return the number 42 in 10 opcodes or less \n */\ncontract MagicNumberSolver {\n    constructor() {\n        assembly {\n            mstore(0, 0x602a60005260206000f3)\n            return(0x16, 0x0a)\n        }\n    }\n}"
+      }
+    },
+    "settings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/MagicNumberSolver.sol": {
+        "MagicNumberSolver": {
+          "abi": [
+            {
+              "inputs": [],
+              "stateMutability": "nonpayable",
+              "type": "constructor"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "6080604052348015600f57600080fd5b5069602a60005260206000f3600052600a6016f3fe",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH10 0x602A60005260206000F3 PUSH1 0x0 MSTORE PUSH1 0xA PUSH1 0x16 RETURN INVALID ",
+              "sourceMap": "156:162:0:-:0;;;189:127;;;;;;;;;;246:22;243:1;236:33;295:4;289;282:18"
+            },
+            "deployedBytecode": {
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "6080604052600080fdfea26469706673582212208797eb2f760309e5453219986eaa61000bb812f83b97a3fc4a04aea0f1db3f4b64736f6c63430008040033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP8 SWAP8 0xEB 0x2F PUSH23 0x309E5453219986EAA61000BB812F83B97A3FC4A04AEA0 CALL 0xDB EXTCODEHASH 0x4B PUSH5 0x736F6C6343 STOP ADDMOD DIV STOP CALLER ",
+              "sourceMap": "156:162:0:-:0;;;;;"
+            },
+            "methodIdentifiers": {}
+          },
+          "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"OBJECTIVES:  create a contract to return the number 42 in 10 opcodes or less \",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/MagicNumberSolver.sol\":\"MagicNumberSolver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/MagicNumberSolver.sol\":{\"keccak256\":\"0xb6b2ed1aa20c5b688d2c73e5230d011ecc1df5b711d3b5817421a949226e8800\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://0ba4d161854f8de9ad58e4cc009c7f60a4e5ac2b6449170f1ef9b060c8af6128\",\"dweb:/ipfs/QmQNMDCjvin3PuKJMLC4cwUvLummdNR3US73LX5VR2EMsg\"]}},\"version\":1}"
+        }
+      }
+    },
+    "sources": {
+      "contracts/MagicNumberSolver.sol": {
+        "ast": {
+          "absolutePath": "contracts/MagicNumberSolver.sol",
+          "exportedSymbols": {
+            "MagicNumberSolver": [
+              8
+            ]
+          },
+          "id": 9,
+          "license": "UNLICENSED",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "38:23:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "documentation": {
+                "id": 2,
+                "nodeType": "StructuredDocumentation",
+                "src": "64:91:0",
+                "text": " OBJECTIVES: \n create a contract to return the number 42 in 10 opcodes or less "
+              },
+              "fullyImplemented": true,
+              "id": 8,
+              "linearizedBaseContracts": [
+                8
+              ],
+              "name": "MagicNumberSolver",
+              "nameLocation": "165:17:0",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "body": {
+                    "id": 6,
+                    "nodeType": "Block",
+                    "src": "203:113:0",
+                    "statements": [
+                      {
+                        "AST": {
+                          "nodeType": "YulBlock",
+                          "src": "222:88:0",
+                          "statements": [
+                            {
+                              "expression": {
+                                "arguments": [
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "243:1:0",
+                                    "type": "",
+                                    "value": "0"
+                                  },
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "246:22:0",
+                                    "type": "",
+                                    "value": "0x602a60005260206000f3"
+                                  }
+                                ],
+                                "functionName": {
+                                  "name": "mstore",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "236:6:0"
+                                },
+                                "nodeType": "YulFunctionCall",
+                                "src": "236:33:0"
+                              },
+                              "nodeType": "YulExpressionStatement",
+                              "src": "236:33:0"
+                            },
+                            {
+                              "expression": {
+                                "arguments": [
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "289:4:0",
+                                    "type": "",
+                                    "value": "0x16"
+                                  },
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "295:4:0",
+                                    "type": "",
+                                    "value": "0x0a"
+                                  }
+                                ],
+                                "functionName": {
+                                  "name": "return",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "282:6:0"
+                                },
+                                "nodeType": "YulFunctionCall",
+                                "src": "282:18:0"
+                              },
+                              "nodeType": "YulExpressionStatement",
+                              "src": "282:18:0"
+                            }
+                          ]
+                        },
+                        "evmVersion": "istanbul",
+                        "externalReferences": [],
+                        "id": 5,
+                        "nodeType": "InlineAssembly",
+                        "src": "213:97:0"
+                      }
+                    ]
+                  },
+                  "id": 7,
+                  "implemented": true,
+                  "kind": "constructor",
+                  "modifiers": [],
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 3,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "200:2:0"
+                  },
+                  "returnParameters": {
+                    "id": 4,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "203:0:0"
+                  },
+                  "scope": 8,
+                  "src": "189:127:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "public"
+                }
+              ],
+              "scope": 9,
+              "src": "156:162:0",
+              "usedErrors": []
+            }
+          ],
+          "src": "38:280:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}
