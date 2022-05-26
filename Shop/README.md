@@ -18,6 +18,13 @@ Instead of calling buyer.price() twice in the Shop contract's buy() method, call
 Also it's being communicated that the 'view' restriction on the Buyer interface is being violated here, and the EVM is fine with that. The external contract matches the shape of the interface enough at runtime that the method can be called. 
 
 ### Instructions
-- compile 
-- enter the Shop contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Shop.sol](contracts/Shop.sol) - Ethernaut contract
+- [contracts/Attacker.sol](contracts/Attacker.sol) - Contract which executes the attack
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/RecoveryTest.js](test/ShopTest.js) - Unit tests 

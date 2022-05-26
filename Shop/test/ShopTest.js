@@ -1,14 +1,14 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
-describe("Shop contract", function () {		  
+describe("Ethernaut Shop", function () {		  
 	let shop, buyer;			//contracts
 	
 	beforeEach(async function () {
         //contracts
-		shop = await testUtils.deployContract("Shop");
-		buyer = await testUtils.deployContract("TestBuyer");
+		shop = await utils.deployContractSilent("Shop");
+		buyer = await utils.deployContractSilent("TestBuyer");
 	});
 	      
 	describe("Buying", function () {
