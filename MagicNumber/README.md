@@ -17,21 +17,33 @@ Of course, the contract is expected to return 42 in response to whatIsTheMeaning
 //TODO: elaborate & format 
 opcodes: 
 `60 2a `
+
 `60 00 `
+
 `52 `
+
 `60 20 `
+
 `60 00 `
+
 `f3 `
 
 assembly: 
 
 `opcode  code    arg     stack`
+
 `---------------------------------`
+
 `0x60    PUSH1   2a      [2a]        //push 1 byte 2a onto stack`
+
 `0x60    PUSH1   00      [00][2a]    //push 1 byte 00 onto stack `
+
 `0x52    MSTORE                      //store value 2a at memory offset 00`
+
 `0x60    PUSH1   20      [20]        //push 1 byte 20 onto stack`
+
 `0x60    PUSH1   00      [00][20]    //push 1 byte 00 onto stack`
+
 `0xf3    RETURN                      //return 0x20 bytes from memory 00    `
 
 Note that this does not actually create a function. Any call to any function will result in this code being executed and the same value being returned. This is demonstrated in unit tests. 
