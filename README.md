@@ -46,6 +46,7 @@ Note that this repo is still a work in progress. Only completed exercises are up
 - [NaughtCoin](https://github.com/jrkosinski/Ethernaut/tree/main/NaughtCoin) 
 - [Preservation](https://github.com/jrkosinski/Ethernaut/tree/main/Preservation) 
 - [Recovery](https://github.com/jrkosinski/Ethernaut/tree/main/Recovery) 
+- [MagicNumber](https://github.com/jrkosinski/Ethernaut/tree/main/MagicNumber) 
 - [Denial](https://github.com/jrkosinski/Ethernaut/tree/main/Denial) 
 - [Shop](https://github.com/jrkosinski/Ethernaut/tree/main/Shop) 
 - [Dex2](https://github.com/jrkosinski/Ethernaut/tree/main/Dex2) 
