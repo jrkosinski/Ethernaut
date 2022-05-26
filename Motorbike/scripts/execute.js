@@ -1,10 +1,8 @@
-const { ethers, waffle } = require("hardhat");
+const { ethers } = require("hardhat");
 const Deployer = require("./deployer");
 const Runner = require("./lib/runner");
 
-const provider = waffle.provider;
-
-Runner.run(async () => {
+Runner.run(async (provider) => {
     
     //PLACE MOTORBIKE CONTRACT ADDRESS HERE (Ethernaut: contract.address)
     const contractAddr = "0x0F0962b59d11F1047caCADffa2FFC014a62ED93B";     

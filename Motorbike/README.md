@@ -17,10 +17,17 @@ Would you be able to selfdestruct its engine and make the motorbike unusable?
 - upgrade to something that will self-destruct
 
 ### Takeaways
-- never leave initializable contracts uninitialized 
+- don't leave initializable contracts uninitialized 
 - be aware of the potential pitfalls of delegatecall
 
 ### Instructions
-- compile 
-- enter the Motorbike contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Motorbike.sol](contracts/Motorbike.sol) - Ethernaut contract
+- [contracts/AttackEngine.sol](contracts/AttackEngine.sol) - Contract which executes the attack
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/RecoveryTest.js](test/ShopTest.js) - Unit tests 

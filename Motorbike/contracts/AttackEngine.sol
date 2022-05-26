@@ -15,12 +15,11 @@ contract AttackEngine is Initializable {
     }
     
     function upgradeToAndCall(address newImplementation, bytes calldata data) external payable {
-        
+        //intentionally empty 
     }
     
-    // Restrict to upgrader role
-    function _authorizeUpgrade() internal view {    //TODO: change to be modifier 
-    
+    function _authorizeUpgrade() internal view {  
+        //intentionally empty 
     }
     
     function destructo() public {

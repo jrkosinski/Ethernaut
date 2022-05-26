@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+/**
+ * Simplified version of OZ's Initializable. 
+ */
 contract Initializable {
     bool private initialized;
     bool private initializing;

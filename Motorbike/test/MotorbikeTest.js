@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut Motorbike", function () {		  
 	let Motorbike, engine, nonInitializable;	//contracts
@@ -12,8 +12,8 @@ describe("Ethernaut Motorbike", function () {
         
         //contract
 		Motorbike = await ethers.getContractFactory("Motorbike");
-		engine = await testUtils.deployContract("AttackEngine");
-		nonInitializable = await testUtils.deployContract("NonInitializable");
+		engine = await utils.deployContractSilent("AttackEngine");
+		nonInitializable = await utils.deployContractSilent("NonInitializable");
 	});
 	
 	describe("Test Constructor", function () {
