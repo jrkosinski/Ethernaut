@@ -7,7 +7,7 @@ import "./IShop.sol";
  * OBJECTIVES: 
  * - get Shop.price to equal 0 
  */
-contract Shop is IShop {
+contract Shop  {
     uint public price = 100;
     bool public isSold;
 

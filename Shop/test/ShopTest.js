@@ -51,7 +51,7 @@ describe("Ethernaut Shop", function () {
 			expect(await shop.price()).to.be.equal(100);
 			
 			//deploy attack 
-			attacker = await testUtils.deployContract("Attacker");
+			attacker = await utils.deployContractSilent("Attacker");
 			await attacker.buy(shop.address);
 			
 			//shop should be now sold out at price 0

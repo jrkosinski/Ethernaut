@@ -12,7 +12,7 @@ contract TestBuyer is IBuyer {
     /**
      * Offers a fair price. 
      */
-    function price() external view returns (uint)  {
+    function price() external override view returns (uint)  {
         return offerPrice;
     }
     
