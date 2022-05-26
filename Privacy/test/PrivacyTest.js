@@ -1,17 +1,18 @@
 const { expect } = require("chai");
 const { ethers, waffle} = require("hardhat");
 const provider = waffle.provider;
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
-describe("Privacy contract", function () {		  
+describe("Ethernaut Privacy", function () {		  
 	let contract;
 	const value0 = "value0";
 	const value1 = "value1";
 	const value2 = "value2";
 	
 	beforeEach(async function () {
-        //contracts
-		contract = await testUtils.deployContract("Privacy", [
+        //deploy contract
+        const Contract = await ethers.getContractFactory("Privacy");
+		contract = await Contract.deploy([
 			ethers.utils.formatBytes32String(value0), 
 			ethers.utils.formatBytes32String(value1), 
 			ethers.utils.formatBytes32String(value2), 
