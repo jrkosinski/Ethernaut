@@ -31,17 +31,26 @@ class Utils {
             if (args.length) {
                 switch (args.length) {
                     case 1: 
-                        contract = await abi.deploy(args[0], args[1]);
+                        contract = await abi.deploy(args[0]);
+                        break;
                     case 2: 
-                        contract = await abi.deploy(args[0], args[1], args[2]);
+                        contract = await abi.deploy(args[0], args[1]);
+                        break;
                     case 3: 
-                        contract = await abi.deploy(args[0], args[1], args[2], args[3]);
+                        contract = await abi.deploy(args[0], args[1], args[2]);
+                        break;
                     case 4: 
-                        contract = await abi.deploy(args[0], args[1], args[2], args[3], args[4]);
+                        contract = await abi.deploy(args[0], args[1], args[2], args[3]);
+                        break;
                     case 5: 
+                        contract = await abi.deploy(args[0], args[1], args[2], args[3], args[4]);
+                        break;
+                    case 6: 
                         contract = await abi.deploy(args[0], args[1], args[2], args[3], args[4], args[5]);
+                        break;
                     default: 
                         contract = await abi.deploy(args);
+                        break;
                 }
             } else {
                 contract = await abi.deploy(args);
