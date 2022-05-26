@@ -15,6 +15,13 @@ Step 2: make that contract a partner of the target contract (by calling its setW
 First, as with other reentrancy attacks, the unchecked call to an outside entity should always be seen as a potential attack point. This one could have been prevented by using the checks-effects-interactions pattern, or by implementing a reentrancy guard, or both. 
 
 ### Instructions
-- compile
-- enter the Denial contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Denial.sol](contracts/Denial.sol) - Ethernaut contract
+- [contracts/Attacker.sol](contracts/Attacker.sol) - Contract which executes the attack
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/RecoveryTest.js](test/RecoveryTest.js) - Unit tests 

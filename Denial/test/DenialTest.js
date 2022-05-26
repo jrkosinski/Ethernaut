@@ -1,13 +1,8 @@
 const { expect } = require("chai");
 const { ethers, waffle } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 const provider = waffle.provider;
-
-async function getBalanceLast3(addr) {
-	let value = (await provider.getBalance(addr)).toString();
-	return parseInt(value.substring(value.length-3, value.length));
-}
 
 describe("Ethernaut Denial", function () {		  
 	let contract, attacker;		//contracts
@@ -16,19 +11,24 @@ describe("Ethernaut Denial", function () {
 	beforeEach(async function () {
 		[owner, addr1, addr2, ...addrs] = await ethers.getSigners();
         
-        //contract
-		contract = await testUtils.deployContract("Denial");
-		attacker = await testUtils.deployContract("Attacker");
+        //deploy contracts
+		contract = await utils.deployContractSilent("Denial");
+		attacker = await utils.deployContractSilent("Attacker");
 	});
 	      
 	describe("Initial State", function () {
 		it("owner", async function () {
+			//contract owner should be owner 
 			expect(await contract.owner()).to.be.equal(owner.address);
 		});
+		
 		it("partner", async function () {
+			//contract partner not set 
 			expect(await contract.partner()).to.be.equal("0x0000000000000000000000000000000000000000");
 		});
+		
 		it("balances", async function () {
+			//balances should be zero 
 			expect(await provider.getBalance(contract.address)).to.be.equal(0);
 			expect(await provider.getBalance(attacker.address)).to.be.equal(0);
 		});
@@ -43,10 +43,12 @@ describe("Ethernaut Denial", function () {
 	      
 	describe("Deposit and Withdraw", function () {
 		it("deposit funds", async function () {
+			//send 100 wei to receive() function 
 			await addr1.sendTransaction({
 				to: contract.address,
 				value: 100
 			});
+			//balance is updated 
 			expect(await provider.getBalance(contract.address)).to.be.equal(100);
 		});
 		
@@ -99,4 +101,14 @@ describe("Ethernaut Denial", function () {
 			expect(contractBal2).to.be.lessThan(contractBal1);
 		});
 	});
+	
+	/**
+	 * Gets least significant 3 digits of the wei balance of the given address. 
+	 * @param {string} addr 
+	 * @returns {number} 
+	 */
+	async function getBalanceLast3(addr) {
+		let value = (await provider.getBalance(addr)).toString();
+		return parseInt(value.substring(value.length-3, value.length));
+	}
 });

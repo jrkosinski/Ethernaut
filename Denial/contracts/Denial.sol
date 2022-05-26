@@ -15,15 +15,24 @@ contract Denial {
     uint timeLastWithdrawn;
     mapping(address => uint) withdrawPartnerBalances; // keep track of partners balances
     
+    /**
+     * Sets the contract creator as the owner. 
+     */
     constructor() {
         owner = payable(msg.sender);
     }
 
+    /**
+     * Sets the partner storage variable. 
+     * @param _partner the address value to set. 
+     */
     function setWithdrawPartner(address _partner) public {
         partner = _partner;
     }
 
-    // withdraw 1% to recipient and 1% to owner
+    /**
+     * Withdraw 1% to recipient and 1% to owner.
+     */
     function withdraw() public {
         uint amountToSend = address(this).balance.div(100);
         // perform a call without checking return
@@ -35,10 +44,15 @@ contract Denial {
         withdrawPartnerBalances[partner] = withdrawPartnerBalances[partner].add(amountToSend);
     }
 
-    // allow deposit of funds
+    /**
+     * Allow deposit of funds.
+     */
     receive() external payable {}
 
-    // convenience function
+    /**
+     * Gets the ether balance of this contract. 
+     * @return (uint) the balance in wei. 
+     */
     function contractBalance() public view returns (uint) {
         return address(this).balance;
     }
