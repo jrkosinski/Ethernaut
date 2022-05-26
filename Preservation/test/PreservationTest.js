@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers, waffle} = require("hardhat");
 const provider = waffle.provider;
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 async function getStoredTime(addr) {
     return parseInt(await provider.getStorageAt(addr, 3));
@@ -14,11 +14,11 @@ describe("Ethernaut Preservation", function () {
     beforeEach(async function () {
         [owner, addr1, ...addrs] = await ethers.getSigners();
         
-        //contracts
-		brokenLib = await testUtils.deployContract("LibraryContract");
-		fixedLib = await testUtils.deployContract("FixedTimeLibrary");
-		attackLib = await testUtils.deployContract("ImpostorLibrary");
-		contract = await testUtils.deployContract("Preservation", [brokenLib.address, fixedLib.address]);
+        //deploy contracts
+		brokenLib = await utils.deployContractSilent("LibraryContract");
+		fixedLib = await utils.deployContractSilent("FixedTimeLibrary");
+		attackLib = await utils.deployContractSilent("ImpostorLibrary");
+		contract = await utils.deployContractSilent("Preservation", [brokenLib.address, fixedLib.address]);
     });
     
     describe("Normal function", function () {

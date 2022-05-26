@@ -10,6 +10,10 @@ contract ImpostorLibrary {
     address public timeZone2Library;
     uint public owner; 
     
+    /**
+     * Purports to the storedTime state variable, but actually sets the owner. 
+     * @param _time purportedly a timestamp; actually an owner address
+     */
     function setTime(uint _time) public {
         owner = _time;
     }

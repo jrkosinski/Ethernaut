@@ -11,6 +11,10 @@ contract FixedTimeLibrary {
     address private c;
     uint private storedTime;  
 
+    /**
+     * Sets the storedTime state variable. 
+     * @param _time a timestamp 
+     */
     function setTime(uint _time) public {
         storedTime = _time;
     }

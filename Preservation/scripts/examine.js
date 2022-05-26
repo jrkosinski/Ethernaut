@@ -3,6 +3,9 @@ const Runner = require('./lib/runner');
 const Deployer = require('./deployer');
 const provider = waffle.provider;
 
+/**
+ * Just a quick utility to have a look at what's in storage. 
+ */
 Runner.run(async (owner) => { 
     
     const contractAddr = "0xDC0C662aD9Ad7B1d8a536417A6E42D6D91E89848"; 
