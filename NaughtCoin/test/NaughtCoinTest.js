@@ -1,8 +1,8 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
-describe("NaughtCoin contract", function () {		  
+describe("Ethernaut NaughtCoin", function () {		  
 	let token;					//contracts
 	let owner, addr1;			//accounts
 	const initialBalance = "1000000000000000000000000";
@@ -11,7 +11,7 @@ describe("NaughtCoin contract", function () {
 		[owner, addr1, ...addrs] = await ethers.getSigners();
 		
         //contracts
-		token = await testUtils.deployContract("NaughtCoin", owner.address);
+		token = await utils.deployContractSilent("NaughtCoin", owner.address);
 	});
 	      
 	describe("Initial state", function () {
@@ -23,6 +23,7 @@ describe("NaughtCoin contract", function () {
 	      
 	describe("Transfer tokens", function () {
 		it("normal transfer fails", async function () {
+			//transfer fails when contract is locked
 			await expect(token.transfer(addr1.address, 1)).to.be.revertedWith("contract is locked");
 		});
 		

@@ -18,6 +18,7 @@ contract NaughtCoin is ERC20 {
 
     /**
      * Transfers initial mint of tokens to player. 
+     * @param _player address of the Ethernaut player  
      */
     constructor(address _player)  ERC20('NaughtCoin', '0x0')  {
         player = _player;
@@ -28,9 +29,12 @@ contract NaughtCoin is ERC20 {
     
     /**
      * Standard ERC20 transfer, but is timelocked.  
+     * @param _to transfer recipient (see ERC20 transfer)
+     * @param _value transfer amount of tokens  (see ERC20 transfer)
+     * @return (bool) (see ERC20 transfer)
      */
     function transfer(address _to, uint256 _value) override public lockTokens returns (bool) {
-        super.transfer(_to, _value);
+        return super.transfer(_to, _value);
     }
 
     /**

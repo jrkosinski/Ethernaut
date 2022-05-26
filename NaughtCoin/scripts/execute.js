@@ -2,7 +2,7 @@ const { ethers } = require("hardhat");
 const Runner = require("./lib/runner");
 
 
-Runner.run(async (owner) => { 
+Runner.run(async (provider, owner) => { 
     
     //PLACE NAUGHTCOIN CONTRACT ADDRESS HERE (Ethernaut: contract.address)
     const contractAddr = "0x7e701565AFC1213C59EF83e6D98FBC444F9f73f4"; 

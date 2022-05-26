@@ -10,6 +10,12 @@ The author of the token protected the transfer method with the lockTokens modifi
 This exercise just wants you to be aware that, in regard to ERC20 tokens, approve/transferFrom is an alternate to transfer, as a way to move tokens from one address to another. 
 
 ### Instructions
-- compile 
-- enter the NaughtCoin contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/NaughtCoin.sol](contracts/NaughtCoin.sol) - Ethernaut contract
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/NaughtCoinTest.js](test/NaughtCoinTest.js) - Unit tests 
