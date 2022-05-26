@@ -27,6 +27,14 @@ The dangers of delegatecall. It can be easy to forget that the call is executed 
 In this case, delegatecall should not be used. If it did for some reason or another need to be used, then the library contract's would have to take into account the memory layout of the calling contract. This setup, even if done right, could easily lead to similar unexpected problems in the future (if for example the parent contract's memory layout were to be changed). 
 
 ### Instructions
-- compile
-- enter the Preservation contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/Preservation.sol](contracts/Preservation.sol) - Ethernaut contract
+- [contracts/ImpostorLibrary.sol](contracts/ImpostorLibrary.sol) - Contract that executes the 'attack'
+- [contracts/FixedTimeLibrary.sol](contracts/FixedTimeLibrary.sol) - Contract that fixes the bug in the timezone library; used in unit tests 
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/PreservationTest.js](test/PreservationTest.js) - Unit tests 
