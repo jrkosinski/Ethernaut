@@ -1,8 +1,7 @@
-const { ethers } = require("ethers");
-const Runner = require("./lib/runner");
+const utils = require("./lib/utils");
 
 module.exports = {
     deploy: async(address) => {
-        return await Runner.deployContract("Attacker", address);
+        return await utils.deployContract("Attacker", address);
     }
-}
+};

@@ -19,9 +19,18 @@ Gate three is checking for a specific transformation of an 8-byte portion of the
 ### Takeaways
 - First, the exercise is reiterating that tx.id is not always equal to msg.sender. 
 - Second, the exercise teaches about extcodesize, how it is > 0 for contract addresses, except when the caller is construction/creation code. 
--  Finally, bitwise operations and binary conversions! Be aware of how they work and what they return. 
+-  Finally, bitwise operations and binary conversions... be aware of how they work and what they return. 
 
 ### Instructions
-- compile 
-- enter the GatekeeperTwo contract address (from Ethernaut) into attack.js
-- run scripts/attack.js
+- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+
+`> npx hardhat run scripts/execute.js --network rinkeby`
+
+### Files of Note
+- [contracts/GatekeeperTwo.sol](contracts/GatekeeperTwo.sol) - Ethernaut contract
+- [contracts/Attacker.sol](contracts/Attacker.sol) - Contract that executes the 'attack'. 
+- [contracts/GateTester.sol](contracts/GateTester.sol) - Contract involved in unit testing.
+- [contracts/GateTesterClient.sol](contracts/GateTesterClient.sol) - Contract involved in unit testing.
+- [scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [test/GatekeeperTest.js](test/GatekeeperTest.js) - Unit tests 

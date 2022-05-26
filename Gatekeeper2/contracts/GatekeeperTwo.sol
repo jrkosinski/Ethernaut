@@ -29,6 +29,7 @@ contract GatekeeperTwo {
     /**
      * Requires the value passed in to be a specific bitwise transformation of an 8-byte portion
      * of the sender's address.
+     * @param _gateKey value passed in by user as a password attempt
      */
     modifier gateThree(bytes8 _gateKey) {
         unchecked {
@@ -39,6 +40,8 @@ contract GatekeeperTwo {
 
     /**
      * Will set entrant if all three gates are passed. 
+     * @param _gateKey value passed in by user as a password attempt
+     * @return (bool) true if all passed (success condition)
      */
     function enter(bytes8 _gateKey) public gateOne gateTwo gateThree(_gateKey) returns (bool) {
         entrant = tx.origin;
