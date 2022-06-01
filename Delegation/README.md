@@ -9,12 +9,12 @@ The goal of this level is for you to claim ownership of the instance you are giv
 - Method ids
   
 ### Solution
-The _Delegation_ contract calls to the _Delegate_ contract via _delegatecall_, in the _fallback_ method. Therefore, if we call _Delegation_ with the method signature of the pwn() method, and _Delegation_ does not have such a method, execution will go to the _fallback_. There, it will call to _Delegate_'s pwn() method. 
+The _Delegation_ contract calls to the _Delegate_ contract via _delegatecall_, in the fallback method. Therefore, if we call _Delegation_ with the method signature of the pwn() method, and _Delegation_ does not have such a method, execution will go to the fallback. There, it will call to _Delegate_'s pwn() method. 
 
-Now, in the pwn() method, the owner will be set with msg.sender. But since it's _delegatecall_, it won't set _Delegate_'s owner, but _Delegation_'s. Because _delegatecall_ preserves the context of the caller, not the callee. So we will then be setting _Delegation_'s owner to whatever address called the method. And we become the owner of the contract. 
+Now, in the pwn() method, the owner will be set as msg.sender. But since it's _delegatecall_, it won't set _Delegate_'s owner, but _Delegation_'s. Because _delegatecall_ preserves the context of the caller, not the callee. It operates on the calling contract's memory, not the called contract's. So we will then be setting _Delegation_'s owner to whatever address called the method. And we become the owner of the contract. 
 
 ### Takeaways
-_delegatecall_ is a common attack point, and has been a known common attack point in the past. It's context-preserving nature has confused developers at times, and in more complex examples it can have some pretty difficult to foresee effects. 
+_delegatecall_ is a common attack point, and has been a known common attack point in the past. It's context-preserving nature has confused developers at times, and in more complex examples it can legitimately have some pretty difficult to foresee effects. So while this example is simple and the issue is easy to see, it's a legitimate security issue, though awareness of it has grown. 
 
 ### Instructions
 - In **/scripts/execute.js**, set the contractAddr variable's value with Ethernaut's contract.address. 
