@@ -12,7 +12,9 @@ This one is so simple, but based on a known famous attack. Apparently a contract
 ### Takeaways
 Don't assume that the eponymous function is the constructor. And don't do what they did I guess. Maybe the lesson here is that disastrous consequences can arise from trivial oversights. 
 
-Incidentally there's another way to drain the contract's funds, which can be seen in the unit tests.
+This one is based on a real attack, the Rubixi contract hack I believe. I don't remember the exact details, but this is a simplified version of exactly that. I don't know if this is a common mistake, but it's good to remember that every line of code must be thoroughly examined, as a disastrous vulnerability occasionally can arise from a small mistake. 
+
+Incidentally there's a second way to drain the contract's funds, which can be seen in the unit tests.
 
 ### Instructions
 - In **/scripts/execute.js**, set the contractAddr variable's value with Ethernaut's contract.address. 
