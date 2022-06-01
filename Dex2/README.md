@@ -16,6 +16,8 @@ You will still start with 10 tokens of token1 and 10 of token2. The DEX contract
 
 This one is similar to Dex One, but the changes they've made to it make it actually simpler to complete. 
 
+//TODO: elaborate
+
 ### Takeaways 
 - wonky math (division) when liquidity is low results in unintended amounts (e.g. 0)
 - trusting contracts to adhere faithfully to an interface 
