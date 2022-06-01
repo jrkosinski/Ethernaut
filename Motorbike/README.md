@@ -11,6 +11,7 @@ Would you be able to selfdestruct its engine and make the motorbike unusable?
 - Initializable contract
 
 ### Solution 
+//TODO: put into paragraphs
 - because of delegatecall, engine is uninitialized 
 - because it's uninitialized, initialize can still be called 
 - call initialize to become upgrader 
