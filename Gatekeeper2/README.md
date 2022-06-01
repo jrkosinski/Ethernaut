@@ -10,16 +10,16 @@ This gatekeeper introduces a few new challenges. Register as an entrant to pass 
 - The Coin Flip level is also a good place to start when approaching this challenge.
 
 ### Solution 
-Gate one is the same as in the first gatekeeper; calling from another contract will ensure that the tx.id is different from the msg.sender.
+Gate one is the same as in gate one in the original Gatekeeper; calling from another contract will ensure that the tx.id is different from the msg.sender.
 
-Gate two is checking that the codesize is 0. Generally if codesize > 0, the caller is taken to be a contract (which would fail the gate). But if we call from the constructor of the smart contract, codesize is still 0 (as the contract has not actually been created yet). 
+Gate two is checking that the codesize is 0. Generally if codesize > 0, the caller is taken to be a contract (which would fail the gate). But if we call from the constructor of the smart contract, codesize is still 0 (as the contract has not actually been created yet). So to get around gate two you must just call it from a contract's constructor code. 
 
-Gate three is checking for a specific transformation of an 8-byte portion of the sender address. Get it by starting with the sender (contract) address, take the first 8 bytes of the hash of the address, and cast it to uint64. Then take the 1s complement of that value, and pass 8 bytes of it cast as bytes8. 
+Gate three is checking for a specific transformation of an 8-byte portion of the sender address. Get it by starting with the sender (contract) address, take the first 8 bytes of the hash of the address, and cast it to uint64. Then take the 1s complement of that value, and pass 8 bytes of it cast as bytes8. It's easy enough to see what test this gate is doing, and just walk it backwards to find data that will satisfy it. 
 
 ### Takeaways
 - First, the exercise is reiterating that tx.id is not always equal to msg.sender. 
 - Second, the exercise teaches about extcodesize, how it is > 0 for contract addresses, except when the caller is construction/creation code. 
--  Finally, bitwise operations and binary conversions... be aware of how they work and what they return. 
+-  Finally, bitwise operations and binary conversions... to make sure you are aware of how they work and what they produce. 
 
 ### Instructions
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
