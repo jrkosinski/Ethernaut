@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut DoubleEntryPoint", function () {		  
 	let anyToken, legacyToken, det, cryptoVault, forta, detectionBot;	//contracts
@@ -11,11 +11,11 @@ describe("Ethernaut DoubleEntryPoint", function () {
 		[owner, player, ...addrs] = await ethers.getSigners();
         
         //contracts
-		anyToken = await testUtils.deployContract("AnyToken"); 
-		cryptoVault = await testUtils.deployContract("CryptoVault", player.address);
-		legacyToken = await testUtils.deployContract("LegacyToken");
-		forta = await testUtils.deployContract("Forta");
-		det = await testUtils.deployContract("DoubleEntryPoint",  [
+		anyToken = await utils.deployContractSilent("AnyToken"); 
+		cryptoVault = await utils.deployContractSilent("CryptoVault", player.address);
+		legacyToken = await utils.deployContractSilent("LegacyToken");
+		forta = await utils.deployContractSilent("Forta");
+		det = await utils.deployContractSilent("DoubleEntryPoint",  [
 			legacyToken.address, 
 			cryptoVault.address, 
 			forta.address, 
@@ -116,7 +116,7 @@ describe("Ethernaut DoubleEntryPoint", function () {
 		
 		//install detection bot
 		beforeEach(async function () {
-			detectionBot = await testUtils.deployContract("DetectionBot");
+			detectionBot = await utils.deployContractSilent("DetectionBot");
 			await forta.connect(player).setDetectionBot(detectionBot.address);
 		}); 
 		

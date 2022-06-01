@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut DoubleEntryPoint", function () {		  
 	let legacyToken;				//contracts
@@ -10,6 +10,6 @@ describe("Ethernaut DoubleEntryPoint", function () {
 		[owner, ...addrs] = await ethers.getSigners();
         
         //contracts
-		legacyToken = await testUtils.deployContract("LegacyToken");
+		legacyToken = await utils.deployContractSilent("LegacyToken");
 	});
 });

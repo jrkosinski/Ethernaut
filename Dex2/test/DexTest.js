@@ -1,21 +1,20 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
-const testUtils = require("./utils");
+const utils = require("../scripts/lib/utils");
 
 describe("Ethernaut Dex Two", function () {
     let dex, token1, token2;    //contracts
-	let owner, addr1;           //accounts 
+	let owner;                  //accounts 
 	
 	beforeEach(async function () {
-		[owner, addr1, ...addrs] = await ethers.getSigners();
+		[owner, ...addrs] = await ethers.getSigners();
 		
         //tokens
-		token1 = await testUtils.deployContract("AToken");
-		token2 = await testUtils.deployContract("BToken");
+		token1 = await utils.deployContractSilent("AToken");
+		token2 = await utils.deployContractSilent("BToken");
         
         //dex
-		Dex = await ethers.getContractFactory("Dex");
-		dex = await Dex.deploy();
+        dex = await utils.deployContractSilent("Dex");
         
         await dex.setTokens(token1.address, token2.address);
 	});
@@ -205,7 +204,7 @@ describe("Ethernaut Dex Two", function () {
         let atkToken;
         
         beforeEach(async function () {
-            atkToken = await testUtils.deployContract("AttackToken");
+            atkToken = await utils.deployContractSilent("AttackToken");
             
             await approveAndAdd(token1, 100);
             await approveAndAdd(token2, 100);
@@ -251,11 +250,22 @@ describe("Ethernaut Dex Two", function () {
         });
     });
 	
+    /**
+     * Approve spending of a token, and add it to the Dex as liquidity in one step. 
+     * @param {string} token the token to approve for spending by the Dex
+     * @param {number} amount the quantity of token to approve 
+     */
     async function approveAndAdd(token, amount) {
         await token.approve(dex.address, amount);
         await dex.add_liquidity(token.address, amount);
     }
     
+    /**
+     * Performs a swap on the DEX. 
+     * @param {number} amount1 the quantity of token1 to add to Dex as liquidity
+     * @param {number} amount2  the quantity of token2 to add to Dex as liquidity
+     * @param {number} swapAmount the amount of token1 to swap for token2
+     */
     async function doSwap(amount1, amount2, swapAmount) {
         //add liquidity 
         await approveAndAdd(token1, amount1);

