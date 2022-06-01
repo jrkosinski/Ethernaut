@@ -20,7 +20,7 @@ Before executing that attack, you will have to send some amount of ether to the 
 
 ### Takeaways
 This contract could have reduced the danger of this sort of attack by either 
-- checks-effects-interactions
+- checks-effects-interactions pattern
  
 or 
 - a reentrancy guard 
