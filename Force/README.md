@@ -19,7 +19,7 @@ The other way is to self-destruct a contract that has ether, and pass the addres
 The second way is used to complete this level. The second (address prediction) can be seen in the unit tests. 
 
 ### Takeaways
-There is more than one way to send ether into a contract. 
+There is more than one way to send ether into a contract. Furthermore, sometimes overlooking a way that ether can get _into_ a contract can lead to ether going _out of_ a contract. 
 
 ### Instructions
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
