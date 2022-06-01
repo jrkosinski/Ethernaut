@@ -16,7 +16,7 @@ One is to predict the address of the contract before it's created, then send eth
 
 The other way is to self-destruct a contract that has ether, and pass the address of the target contract. 
 
-The second way is used to complete this level. The second (address prediction) can be seen in the unit tests. 
+The second way is used to complete this level. The first (address prediction) can be seen in the unit tests. 
 
 ### Takeaways
 There is more than one way to send ether into a contract. Furthermore, sometimes overlooking a way that ether can get _into_ a contract can lead to ether going _out of_ a contract. 
