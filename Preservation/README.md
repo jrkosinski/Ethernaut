@@ -24,7 +24,7 @@ The fun thing about this one, is that delegatecall allows for unintended memory 
 ### Takeaways
 The dangers of delegatecall. It can be easy to forget that the call is executed in the caller's context, not the callee's. It can be even easier to miss some of the less obvious or less intuitive implications of this. 
 
-In this case, delegatecall should not be used. If it did for some reason or another need to be used, then the library contract's would have to take into account the memory layout of the calling contract. This setup, even if done right, could easily lead to similar unexpected problems in the future (if for example the parent contract's memory layout were to be changed). 
+In this case, delegatecall should not be used. If it did for some reason or another need to be used, then the library contract's code would have to take into account the memory layout of the calling contract. But that's a backwards design, so it doesn't really make sense. 
 
 ### Instructions
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
