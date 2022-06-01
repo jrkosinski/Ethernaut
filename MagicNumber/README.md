@@ -49,7 +49,7 @@ assembly:
 Note that this does not actually create a function. Any call to any function will result in this code being executed and the same value being returned. This is demonstrated in unit tests. 
 
 ### Takeaways
-Magic can be done using assembly, that cannot be accomplished in a higher level language. 
+Magic can be done using assembly, that cannot be accomplished in a higher level language. Not all languages allow you to include inline assembly as a block within higher-level code, but Solidity does (as of version 0.3.something). 
 
 ### Instructions
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
