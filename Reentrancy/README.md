@@ -13,9 +13,9 @@ The goal of this level is for you to steal all the funds from the contract.
 ### Solution 
 No attempt is made to hide the fact that the solution to this level is to execute a reentrancy attack. The vulnerable point is in the withdraw(uint) method, where the call is made to msg.sender. Don't assume that msg.sender is not itself a smart contract. 
 
-Well, supposing that it is, we can imagine what might happen if it was. Its receive() method would be called. From its receive() method it could call withdraw() again. At that point its balance would not yet have been decremented, so it would still pass the check `if (balances[msg.sender] >= _amount)`, _even though it had already received the amount_. That's the key right there. It will continually keep receiving the same amount over and over, until the transaction ran out of gas or the contract ran out of ether. 
+Well, supposing that it is a smart contract, we can imagine what might happen. Its receive() method would be called. From its receive() method it could call withdraw() again. At that point its balance would not yet have been decremented, so it would still pass the check `if (balances[msg.sender] >= _amount)`, _even though it had already received the amount_. That's the key right there. It will continually keep receiving the same amount over and over, until the transaction ran out of gas or the contract ran out of ether. 
 
-Before executing that attack, you will have to send some amount of ether to the contract (from your attacker contract), so that it will pass the balance amount check. The amount that you send should ideally be equally divisible into the contract's balance amount, or else you will not be able to steal all of the funds with one call. Also make sure you supply your transaction with enough gas, so that it doesn't run out before all of the recursive calls are finished. 
+Before executing that attack, you will have to send some amount of ether to the contract (from your attacker contract), so that it will pass the balance amount check. The amount that you send should ideally be an even factor of the contract's balance amount, or else you will not be able to steal all of the funds with one call. Also make sure you supply your transaction with enough gas, so that it doesn't run out before all of the recursive calls are finished. 
 
 
 ### Takeaways
@@ -31,7 +31,7 @@ Next, the effects of the method should come before any external calls (interacti
 
 A simple reentrancy guard could be just a boolean flag in storage that sets to true when the method call begins, and sets to false when the method returns or reverts. OpenZeppelin has a ReentrancyGuard.sol, and it is basically just as described (handled through a modifier). Costs a bit of extra gas for storage and processing, but simple and effective. 
 
-Or why not both? Double protection. 
+Or why not both? 
 
 Another takeaway might be to consider even before the solution, whether or not msg.sender is a contract. Seeing an unchecked call to an anonymous address is a big red flag for a possible attack point. So don't assume an address is not a contract, even if it fails the 'is a contract' test (as it could be constructor code). 
 
