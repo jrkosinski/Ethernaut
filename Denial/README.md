@@ -13,7 +13,8 @@ Step 1: create an attacker contract with a receive() method which calls the with
 Step 2: make that contract a partner of the target contract (by calling its setWithdrawPartner method, passing the attacker contract's address)
 
 ### Takeaways
-First, as with other reentrancy attacks, the unchecked call to an outside entity should always be seen as a potential attack point. This one could have been prevented by using the checks-effects-interactions pattern, or by implementing a reentrancy guard, or both. Reentrancy has in the past been a common way to attack a contract's logic. You should be aware of the different forms that reentrancy can take. Anytime a contract calls out to another entity, this logic should be examined closely, and one should try to consider ways in which this outside call could go wrong.  
+First, as with other reentrancy attacks, the unchecked call to an outside entity should always be seen as a potential attack point. This one could have been prevented by using the checks-effects-interactions pattern, or by implementing a reentrancy guard, or both. Reentrancy has in the past been a common way to attack a contract's logic. 
+It's good to consider the different forms that reentrancy can take. And in general, anytime a contract calls out to another entity, this logic should be examined closely, and one should try to consider ways in which this outside call could go wrong.  
 
 ### Instructions
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
