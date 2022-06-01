@@ -8,7 +8,7 @@ This elevator won't let you reach the top of your building. Right?
 - This Elevator expects to be used from a Building.
 
 ### Solution 
-The Ethernaut description implies that the goal is to get the 'top' boolean data in the contract's first data slot to be set to true. 
+The Ethernaut description implies that the goal is to get the 'top' boolean field in the contract's first data slot to be equal to true. 
 
 The Elevator contract has a clause that explicitly denies going to the top floor. It's based on whether the Building contract returns true or false for the isLastFloor(uint) method. When you design your Building contract (which you must do in order to accomplish this), you can make it return from that property in whatever way you want. Looking at the code for Elevator's goTo function, it's easy to see that a Building whose isLastFloor(uint) method returned 'false' the very first time it was called, but 'true' the second time, would trick the Elevator into setting top = true. 
 
