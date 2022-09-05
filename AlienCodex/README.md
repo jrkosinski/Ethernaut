@@ -36,6 +36,7 @@ So finally, take that number that you've calculated, pass it in to the _revise()
 
 
 ### Takeaways
+The main takeaway here seems to be memory storage - how memory storage slots for array elements work. You can deduce that because of this, it's not really possible to have an array of max size, if for no other reason than the end elements would be overwriting other memory (aside from prohibitive gas costs). Secondary takeaway is the danger of overflowing array length (which is no longer easy to do accidentally in newer Solidity versions) - it can give inadvertent access to all of memory. 
 
 ### Instructions
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
@@ -44,7 +45,7 @@ So finally, take that number that you've calculated, pass it in to the _revise()
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- **[/contracts/AlienCodex.sol](/contracts/AlienCodex.sol)** - Ethernaut contracts 
-- **[/scripts/execute.js](/scripts/execute.js)** - Executes the solution 
-- **[/test/AlienCodexTest.js](/test/AlienCodexTest.js)** - Unit tests 
+- **[/contracts/AlienCodex.sol](contracts/AlienCodex.sol)** - Ethernaut contracts 
+- **[/scripts/execute.js](scripts/execute.js)** - Executes the solution 
+- **[/test/AlienCodexTest.js](test/AlienCodexTest.js)** - Unit tests 
 
