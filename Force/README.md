@@ -23,13 +23,13 @@ There is more than one way to send ether into a contract. Furthermore, sometimes
 
 ### Instructions
 - Compile 
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Force.sol](contracts/Force.sol) - Ethernaut contract
-- [contracts/Destructible.sol](contracts/Destructible.sol) - Contract that executes the 'attack'. 
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/ForceTest.js](test/ForceTest.js) - Unit tests 
+- [/contracts/Force.sol](contracts/Force.sol) - Ethernaut contract
+- [/contracts/Destructible.sol](contracts/Destructible.sol) - Contract that executes the 'attack'. 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/ForceTest.js](test/ForceTest.js) - Unit tests 
