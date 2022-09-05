@@ -52,4 +52,5 @@ Note that this repo is still a work in progress. Only completed exercises are up
 - [Dex2](https://github.com/jrkosinski/Ethernaut/tree/main/Dex2) 
 - [Motorbike](https://github.com/jrkosinski/Ethernaut/tree/main/Motorbike) 
 - [DoubleEntryPoint](https://github.com/jrkosinski/Ethernaut/tree/main/DoubleEntryPoint) 
+- [AlienCodex](https://github.com/jrkosinski/Ethernaut/tree/main/AlienCodex) 
 
