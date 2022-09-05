@@ -1,4 +1,4 @@
-## Vault
+## Ethernaut: Vault
 
 ### Ethernaut Description
 Unlock the vault to pass the level!
@@ -15,12 +15,13 @@ An alternative (but less exciting) way is to find the 'level' contract (Ethernau
 Private state variables cannot be modified from outside the contract; that would require a transaction to modify the value, and the contract/EVM will not allow that. They can, however, be read, so they should definitely not be used for anything that should be truly unseeable or secure. 
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- Compile 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Force.sol](contracts/Vault.sol) - Ethernaut contract
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/ForceTest.js](test/VaultTest.js) - Unit tests 
+- [/contracts/Force.sol](contracts/Vault.sol) - Ethernaut contract
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/ForceTest.js](test/VaultTest.js) - Unit tests 
