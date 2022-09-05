@@ -24,4 +24,4 @@ _delegatecall_ is a common attack point, and has been a known common attack poin
 ### Files of Note
 - **[/contracts/Delegation.sol](/contracts/Delegation.sol)** - Ethernaut contracts 
 - **[/scripts/execute.js](/scripts/execute.js)** - Executes the solution 
-- **[test/DelegationTest.js](/test/DelegationTest.js)** - Unit tests 
+- **[/test/DelegationTest.js](test/DelegationTest.js)** - Unit tests 
