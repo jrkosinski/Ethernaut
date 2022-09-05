@@ -1,4 +1,4 @@
-## GatekeeperTwo
+## Ethernaut: GatekeeperTwo
 
 ### Ethernaut Description
 This gatekeeper introduces a few new challenges. Register as an entrant to pass this level.
@@ -22,6 +22,7 @@ Gate three is checking for a specific transformation of an 8-byte portion of the
 -  Finally, bitwise operations and binary conversions... to make sure you are aware of how they work and what they produce. 
 
 ### Instructions
+- Compile 
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
 - Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
