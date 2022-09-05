@@ -1,4 +1,4 @@
-## Motorbike
+## Ethernaut: Motorbike
 
 ### Ethernaut Description
 Ethernaut's motorbike has a brand new upgradeable engine design.
@@ -22,13 +22,14 @@ Would you be able to selfdestruct its engine and make the motorbike unusable?
 - be aware of the potential pitfalls of delegatecall
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- Compile 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Motorbike.sol](contracts/Motorbike.sol) - Ethernaut contract
-- [contracts/AttackEngine.sol](contracts/AttackEngine.sol) - Contract which executes the attack
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/RecoveryTest.js](test/ShopTest.js) - Unit tests 
+- [/contracts/Motorbike.sol](contracts/Motorbike.sol) - Ethernaut contract
+- [/contracts/AttackEngine.sol](contracts/AttackEngine.sol) - Contract which executes the attack
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/RecoveryTest.js](test/ShopTest.js) - Unit tests 
