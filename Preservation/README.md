@@ -1,4 +1,4 @@
-## Preservation
+## Ethernaut: Preservation
 
 ### Ethernaut Description
 This contract utilizes a library to store two different times for two different timezones. The constructor creates two instances of the library for each time to be stored.
@@ -27,14 +27,15 @@ The dangers of delegatecall. It can be easy to forget that the call is executed 
 In this case, delegatecall should not be used. If it did for some reason or another need to be used, then the library contract's code would have to take into account the memory layout of the calling contract. But that's a backwards design, so it doesn't really make sense. Really there's no need for delegatecall here, but if delegatecall is used it must be remembered that it operates within the state context of the caller contract. This is the caller contract's responsibility to know, and to be careful about what it delegatecalls. 
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- Compile 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Preservation.sol](contracts/Preservation.sol) - Ethernaut contract
-- [contracts/ImpostorLibrary.sol](contracts/ImpostorLibrary.sol) - Contract that executes the 'attack'
-- [contracts/FixedTimeLibrary.sol](contracts/FixedTimeLibrary.sol) - Contract that fixes the bug in the timezone library; used in unit tests 
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/PreservationTest.js](test/PreservationTest.js) - Unit tests 
+- [/contracts/Preservation.sol](contracts/Preservation.sol) - Ethernaut contract
+- [/contracts/ImpostorLibrary.sol](contracts/ImpostorLibrary.sol) - Contract that executes the 'attack'
+- [/contracts/FixedTimeLibrary.sol](contracts/FixedTimeLibrary.sol) - Contract that fixes the bug in the timezone library; used in unit tests 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/PreservationTest.js](test/PreservationTest.js) - Unit tests 
