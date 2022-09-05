@@ -1,4 +1,4 @@
-## Fallout
+## Ethernaut: Fallout
 
 ### Ethernaut Description
 Claim ownership of the contract below to complete this level.
@@ -17,12 +17,13 @@ This one is based on a real attack, the Rubixi contract hack I believe. I don't 
 Incidentally there's a second way to drain the contract's funds, which can be seen in the unit tests.
 
 ### Instructions
-- In **/scripts/execute.js**, set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run **/scripts/execute.js** in hardhat (rinkeby network)
+- Compile 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- **/contracts/Fallout.sol** - Ethernaut contracts 
-- **/scripts/execute.js** - Executes the solution 
-- **/test/FalloutTest.js** - Unit tests 
+- [/contracts/Fallout.sol](contracts/Fallout.sol) - Ethernaut contracts 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/FalloutTest.js](test/FalloutTest.js) - Unit tests 
