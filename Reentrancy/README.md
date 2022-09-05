@@ -1,4 +1,4 @@
-## Reentrancy
+## Ethernaut: Reentrancy
 
 ### Ethernaut Description
 The goal of this level is for you to steal all the funds from the contract.
@@ -37,14 +37,15 @@ Or why not both?
 Another takeaway might be to consider even before the solution, whether or not msg.sender is a contract. Seeing an unchecked call to an anonymous address is a big red flag for a possible attack point. So don't assume an address is not a contract, even if it fails the 'is a contract' test (as it could be constructor code). 
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- Compile 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Reentrancy.sol](contracts/Reentrancy.sol) - Ethernaut contract
-- [contracts/Attacker.sol](contracts/Attacker.sol) - Contract that executes the attack. 
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/ReentrancyTest.js](test/ReentrancyTest.js) - General unit tests 
-- [test/AttackTest.js](test/AttackTest.js) - Unit test that demonstrates attack
+- [/contracts/Reentrancy.sol](contracts/Reentrancy.sol) - Ethernaut contract
+- [/contracts/Attacker.sol](contracts/Attacker.sol) - Contract that executes the attack. 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/ReentrancyTest.js](test/ReentrancyTest.js) - General unit tests 
+- [/test/AttackTest.js](test/AttackTest.js) - Unit test that demonstrates attack
