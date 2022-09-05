@@ -1,4 +1,4 @@
-## Privacy
+## Ethernaut: Privacy
 
 ### Ethernaut Description
 The creator of this contract was careful enough to protect the sensitive areas of its storage.
@@ -28,12 +28,13 @@ The exercise wants you to understand how things are stored in memory, especially
 Also casting: it wants the user to understand that the bytes32 value of the password must be converted to bytes16. Maybe it's also trying to illustrate how the endianness of stored integers and strings differ from one another. 
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- Compile 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Privacy.sol](contracts/Privacy.sol) - Ethernaut contract
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/PrivacyTest.js](test/PrivacyTest.js) - Unit tests 
+- [/contracts/Privacy.sol](contracts/Privacy.sol) - Ethernaut contract
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/PrivacyTest.js](test/PrivacyTest.js) - Unit tests 
