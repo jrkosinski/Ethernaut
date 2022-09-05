@@ -46,7 +46,7 @@ The main takeaway here seems to be memory storage - how memory storage slots for
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- **[/contracts/AlienCodex.sol](contracts/AlienCodex.sol)** - Ethernaut contracts 
-- **[/scripts/execute.js](scripts/execute.js)** - Executes the solution 
-- **[/test/AlienCodexTest.js](test/AlienCodexTest.js)** - Unit tests 
+- [/contracts/AlienCodex.sol](contracts/AlienCodex.sol) - Ethernaut contracts 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/AlienCodexTest.js](test/AlienCodexTest.js) - Unit tests 
 
