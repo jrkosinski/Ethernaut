@@ -33,12 +33,12 @@ Fallbacks are an essential component of some contract upgrade patterns.
 
 ### Instructions
 - Compile
-- In **[/scripts/execute.js](scripts/execute.js)**, set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run **[/scripts/execute.js](scripts/execute.js)** in hardhat (rinkeby network)
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- **[/contracts/Fallback.sol](contracts/Fallback.sol)** - Ethernaut contract
-- **[/scripts/execute.js](scripts/execute.js)** - Executes the solution 
-- **[/test/FallbackTest.js](test/FallbackTest.js)** - Unit tests 
+- [/contracts/Fallback.sol](contracts/Fallback.sol) - Ethernaut contract
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/FallbackTest.js](test/FallbackTest.js) - Unit tests 
