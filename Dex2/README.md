@@ -1,4 +1,4 @@
-## Ethernaut Dex Two 
+## Ethernaut: Dex Two 
 
 ### Ethernaut Description 
 
@@ -23,3 +23,5 @@ This one is similar to Dex One, but the changes they've made to it make it actua
 - trusting contracts to adhere faithfully to an interface 
 
 ### Instructions 
+
+### Files of Note 
