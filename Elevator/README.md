@@ -1,4 +1,4 @@
-## Elevator
+## Ethernaut: Elevator
 
 ### Ethernaut Description
 This elevator won't let you reach the top of your building. Right?
@@ -28,13 +28,14 @@ Again, you must limit your assumptions to the bare minimum.
 
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- Compile. 
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Elevator.sol](contracts/Elevator.sol) - Ethernaut contract
-- [contracts/Building.sol](contracts/Building.sol) - Contract that executes the 'attack'. 
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/ElevatorTest.js](test/ElevatorTest.js) - Unit tests 
+- [/contracts/Elevator.sol](contracts/Elevator.sol) - Ethernaut contract
+- [/contracts/Building.sol](contracts/Building.sol) - Contract that executes the 'attack'. 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/ElevatorTest.js](test/ElevatorTest.js) - Unit tests 
