@@ -39,6 +39,7 @@ So finally, take that number that you've calculated, pass it in to the _revise()
 The main takeaway here seems to be memory storage - how memory storage slots for array elements work. You can deduce that because of this, it's not really possible to have an array of max size, if for no other reason than the end elements would be overwriting other memory (aside from prohibitive gas costs). Secondary takeaway is the danger of overflowing array length (which is no longer easy to do accidentally in newer Solidity versions) - it can give inadvertent access to all of memory. 
 
 ### Instructions
+- compile 
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
 - Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
