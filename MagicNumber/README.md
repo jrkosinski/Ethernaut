@@ -53,13 +53,13 @@ Magic can be done using assembly, that cannot be accomplished in a higher level 
 
 ### Instructions
 - Compile 
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/MagicNumber.sol](contracts/MagicNumber.sol) - Ethernaut contract 
-- [contracts/MagicNumberSolver.sol](contracts/MagicNumberSolver.sol) - Code to deploy the solver 
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/MagicNumberTest.js](test/MagicNumberTest.js) - Unit tests 
+- [/contracts/MagicNumber.sol](contracts/MagicNumber.sol) - Ethernaut contract 
+- [/contracts/MagicNumberSolver.sol](contracts/MagicNumberSolver.sol) - Code to deploy the solver 
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/MagicNumberTest.js](test/MagicNumberTest.js) - Unit tests 
