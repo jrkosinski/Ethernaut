@@ -17,11 +17,11 @@ Now, in the pwn() method, the owner will be set as msg.sender. But since it's _d
 _delegatecall_ is a common attack point, and has been a known common attack point in the past. It's context-preserving nature has confused developers at times, and in more complex examples it can legitimately have some pretty difficult to foresee effects. In short, to summarized I'd say that it creates a deceptive amount of complication that can lead to an attack point. So while this example is simple and the issue is easy to see, it's a legitimate security issue, though awareness of it has grown. 
 
 ### Instructions
-- In **/scripts/execute.js**, set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run **/scripts/execute.js** in hardhat (rinkeby network)
+- In **[/scripts/execute.js]()**, set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run **[/scripts/execute.js]()** in hardhat (rinkeby network)
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- **/contracts/Delegation.sol** - Ethernaut contracts 
-- **/scripts/execute.js** - Executes the solution 
-- **/test/DelegationTest.js** - Unit tests 
+- **[/contracts/Delegation.sol]()** - Ethernaut contracts 
+- **[/scripts/execute.js]()** - Executes the solution 
+- **[/test/DelegationTest.js]()** - Unit tests 
