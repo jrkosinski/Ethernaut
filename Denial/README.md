@@ -18,13 +18,13 @@ First, as with other reentrancy attacks, the unchecked call to an outside entity
 It's good to consider the different forms that reentrancy can take. And in general, anytime a contract calls out to another entity, this logic should be examined closely, and one should try to consider ways in which this outside call could go wrong.  
 
 ### Instructions
-- In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
-- Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
+- In [/scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
+- Run [/scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
 `> npx hardhat run scripts/execute.js --network rinkeby`
 
 ### Files of Note
-- [contracts/Denial.sol](contracts/Denial.sol) - Ethernaut contract
-- [contracts/Attacker.sol](contracts/Attacker.sol) - Contract which executes the attack
-- [scripts/execute.js](scripts/execute.js) - Executes the solution 
-- [test/RecoveryTest.js](test/RecoveryTest.js) - Unit tests 
+- [/contracts/Denial.sol](contracts/Denial.sol) - Ethernaut contract
+- [/contracts/Attacker.sol](contracts/Attacker.sol) - Contract which executes the attack
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution 
+- [/test/DenialTest.js](test/DenialTest.js) - Unit tests 
