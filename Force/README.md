@@ -1,4 +1,4 @@
-## Force
+## Ethernaut: Force
 
 ### Ethernaut Description
 Some contracts will simply not take your money ¯\_(ツ)_/¯
@@ -22,6 +22,7 @@ The second way is used to complete this level. The first (address prediction) ca
 There is more than one way to send ether into a contract. Furthermore, sometimes overlooking a way that ether can get _into_ a contract can lead to ether going _out of_ a contract. 
 
 ### Instructions
+- Compile 
 - In [scripts/execute.js](scripts/execute.js), set the contractAddr variable's value with Ethernaut's contract.address. 
 - Run [scripts/execute.js](scripts/execute.js) in hardhat (rinkeby network)
 
