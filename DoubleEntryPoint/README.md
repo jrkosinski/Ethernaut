@@ -1,4 +1,4 @@
-## DoubleEntryPoint
+## Ethernaut: DoubleEntryPoint
 
 ### Ethernaut Description
 This level features a CryptoVault with special functionality, the sweepToken function. This is a common function to retrieve tokens stuck in a contract. The CryptoVault operates with an underlying token that can't be swept, being it an important core's logic component of the CryptoVault, any other token can be swept.
@@ -34,5 +34,11 @@ c) you're responsible not just for finding the problem, but for fixing it as wel
 
 ### Instructions
 - compile 
-- enter the DoubleEntryPoint contract address (from Ethernaut) into execute.js
-- run scripts/execute.js
+- In scripts/execute.js, set the contractAddr variable's value with Ethernaut's contract.address.
+- Run scripts/execute.js in hardhat (rinkeby network)
+
+### Files of Note 
+- [/contracts/](contracts/) - All solidity contracts 
+- [/contracts/Forta.sol](contracts/Forta.sol) - The new Forta implementation
+- [/scripts/execute.js](scripts/execute.js) - Executes the solution
+- [/test/DoubleEntryPointTest.js](test/DoubleEntryPointTest.js) - Unit tests
