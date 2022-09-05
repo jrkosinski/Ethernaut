@@ -36,6 +36,7 @@ Note that this repo is still a work in progress. Only completed exercises are up
 - [Fallback](https://github.com/jrkosinski/Ethernaut/tree/main/Fallback) 
 - [Fallout](https://github.com/jrkosinski/Ethernaut/tree/main/Fallout) 
 - [Telephone](https://github.com/jrkosinski/Ethernaut/tree/main/Telephone) 
+- [Delegation](https://github.com/jrkosinski/Ethernaut/tree/main/Delegation) 
 - [Token](https://github.com/jrkosinski/Ethernaut/tree/main/Token) 
 - [Force](https://github.com/jrkosinski/Ethernaut/tree/main/Force) 
 - [Vault](https://github.com/jrkosinski/Ethernaut/tree/main/Vault) 
