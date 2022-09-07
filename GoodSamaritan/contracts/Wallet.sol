@@ -2,7 +2,6 @@
 pragma solidity >=0.8.0 <0.9.0;
 
 import "./Coin.sol";
-import "hardhat/console.sol"; 
 
 contract Wallet {
     // The owner of the wallet instance
@@ -26,12 +25,9 @@ contract Wallet {
 
     function donate10(address dest_) external onlyOwner {
         // check balance left
-        console.log("wallet.donate10(%s)", dest_); 
         if (coin.balances(address(this)) < 10) {
-            console.log("there is not enough"); 
             revert NotEnoughBalance();
         } else {
-            console.log("there is enough"); 
             // donate 10 coins
             coin.transfer(dest_, 10);
         }

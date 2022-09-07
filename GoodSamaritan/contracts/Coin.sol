@@ -3,7 +3,6 @@ pragma solidity >=0.8.0 <0.9.0;
 
 import "@openzeppelin/contracts/utils/Address.sol";
 import "./INotifyable.sol";
-import "hardhat/console.sol"; 
 
 contract Coin {
     using Address for address;
@@ -19,7 +18,6 @@ contract Coin {
 
     function transfer(address dest_, uint256 amount_) external {
         uint256 currentBalance = balances[msg.sender];
-        console.log("currentBalance: %d", currentBalance); 
 
         // transfer only occurs if balance is enough
         if(amount_ <= currentBalance) {
