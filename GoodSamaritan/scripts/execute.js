@@ -19,9 +19,8 @@ Runner.run(async (provider, owner) => {
     
     //deploy the attack 
     const attacker = await utils.deployContractSilent("ErrorAttack");
-    await attacker.attack(contract.address); 
+    await attacker.attack(contract.address, true); 
     
     //now it should be zero. If it's not immediately, don't worry; recheck again in a minute
     console.log(`balance is now ${await coin.balances(wallet.address)}`); 
-    
 });

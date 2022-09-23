@@ -101,9 +101,9 @@ describe("Ethernaut Good Samaritan", function () {
 
     describe("Attack", function () {
         it("error attack", async function () {
-            const transferDest = await utils.deployContractSilent("ErrorAttack"); 
+            const errorAttack = await utils.deployContractSilent("ErrorAttack"); 
             
-            await transferDest.attack(contract.address);
+            await errorAttack.attack(contract.address, true);
             
             expect(await coin.balances(wallet.address)).to.equal(0); 
         });
@@ -117,11 +117,6 @@ describe("Ethernaut Good Samaritan", function () {
                 if (bal == 0) 
                     break;
             }
-            //const tx = await transferDest.attack(
-            //    contract.address, [], {
-            //    gasLimit: 100000,
-            //    nonce: nonce || undefined,
-            //});
 
             expect(await coin.balances(wallet.address)).to.equal(0); 
         }); 
