@@ -10,9 +10,13 @@ Would you be able to drain all the balance from his Wallet?
 Solidity Custom Errors
 
 ### Solution 
-As the clue suggests, errors (and the try/catch in the GoodSamaritan contract) are part of the solution. Reentrancy is also part of the solution. 
+As the clue suggests, errors (and the try/catch in the GoodSamaritan contract) are part of the solution. There is a hook given in the code, in the form of the call to INotify.notify. This can be any custom contract, and will be called if the caller of requestDonation is a smart contract. That's the 'in' that allows you to inject custom functionality into the process. 
 
-//TODO: explain 
+The other clue is in the 'catch' clause of the aforementioned try/catch in GoodSamaritan.sol. Note that the 'catch', it's specified that if the error caught is the NotEnoughBalance error, the GoodSamaritan will simply dump all of the contents of its wallet to the caller. Since INotify.notify is in that call stack, it stands to reason that if INotify.notify throws that specific error, it will be caught here... and the entire contents of the wallet will be dumped to the caller. Therefore, all one needs to do is: 
+- create a contract that both implements INotify, and calls the GoodSamaritan's requestDonation method. 
+- have that contract throw a NotEnoughBalance error from its notify method. 
+
+https://hackernoon.com/good-samaritan-the-new-ethernaut-ctf-challenge
 
 
 ### Takeaways
