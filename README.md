@@ -1,5 +1,5 @@
 # Ethernaut
-## Solutions and Explanations to OpenZeppelin's Ethernaut puzzles (work in progress) 
+## Solutions and Explanations to OpenZeppelin's Ethernaut puzzles
 
 OpenZeppelin's [Ethernaut](https://ethernaut.openzeppelin.com/) is a great place to start looking for a crash course in Ethereum smart contract security practices. It covers many common Solidity and EVM attack points, presented in a game format. Many of the puzzles have been directly inspired by real-life smart contract hacks that have taken place in the past. 
 
